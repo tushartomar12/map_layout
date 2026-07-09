@@ -1,0 +1,156 @@
+[
+  {
+    "id": "4",
+    "points": [[1235, 1606], [1311, 1606], [1311, 1700], [1235, 1700]],
+    "edgeLengths": [15.0, 35.71, 15.02, 34.94],
+    "areaSqM": 530,
+    "zone": "Central Residency",
+    "typeOfDevelopment": "Residential Detached",
+    "status": "available",
+    "price": null,
+    "sellable": true
+  },
+  {
+    "id": "15",
+    "points": [[1143, 1542], [1254, 1542], [1239, 1639], [1143, 1639]],
+    "edgeLengths": [15.0, 20.92, 15.0, 20.92],
+    "areaSqM": 313.8,
+    "zone": "Central Residency",
+    "typeOfDevelopment": "Residential Detached",
+    "status": "available",
+    "price": null,
+    "sellable": true
+  },
+  {
+    "id": "31",
+    "points": [[1148, 1202], [1248, 1202], [1233, 1291], [1148, 1291]],
+    "edgeLengths": [15.0, 15.28, 15.0, 15.28],
+    "areaSqM": 229.17,
+    "zone": "Central Residency",
+    "typeOfDevelopment": "Residential Detached",
+    "status": "available",
+    "price": null,
+    "sellable": true
+  },
+  {
+    "id": "39",
+    "points": [[1274, 904], [1419, 904], [1388, 1068], [1274, 1068]],
+    "edgeLengths": [15.0, 20.59, 15.0, 20.59],
+    "areaSqM": 308.79,
+    "zone": "Central Residency",
+    "typeOfDevelopment": "Residential Detached",
+    "status": "available",
+    "price": null,
+    "sellable": true
+  },
+  {
+    "id": "43",
+    "points": [[871, 905], [981, 905], [981, 1015], [871, 1015]],
+    "edgeLengths": [15.0, 17.57, 15.0, 17.57],
+    "areaSqM": 263.5,
+    "zone": "Central Residency",
+    "typeOfDevelopment": "Residential Detached",
+    "status": "available",
+    "price": null,
+    "sellable": true
+  },
+  {
+    "id": "57",
+    "points": [[1287, 671], [1414, 671], [1393, 834], [1287, 834]],
+    "edgeLengths": [15.0, 18.59, 15.0, 18.59],
+    "areaSqM": 278.79,
+    "zone": "Central Residency",
+    "typeOfDevelopment": "Residential Detached",
+    "status": "available",
+    "price": null,
+    "sellable": true
+  },
+  {
+    "id": "76",
+    "points": [[875, 375], [972, 375], [972, 500], [875, 500]],
+    "edgeLengths": [15.0, 17.57, 15.0, 17.57],
+    "areaSqM": 263.5,
+    "zone": "Central Residency",
+    "typeOfDevelopment": "Residential Detached",
+    "status": "available",
+    "price": null,
+    "sellable": true
+  },
+  {
+    "id": "96",
+    "points": [[1402, 18], [1526, 18], [1508, 122], [1402, 122]],
+    "edgeLengths": [15.0, 15.0, 15.0, 14.99],
+    "areaSqM": 224.95,
+    "zone": "Central Residency",
+    "typeOfDevelopment": "Residential Detached",
+    "status": "available",
+    "price": null,
+    "sellable": true
+  },
+  {
+    "id": "103",
+    "points": [[776, 460], [882, 460], [882, 570], [776, 570]],
+    "edgeLengths": [15.0, 19.83, 15.0, 19.83],
+    "areaSqM": 297.5,
+    "zone": "Central Residency",
+    "typeOfDevelopment": "Residential Detached",
+    "status": "available",
+    "price": null,
+    "sellable": true
+  },
+  {
+    "id": "122",
+    "points": [[777, 788], [882, 788], [882, 900], [777, 900]],
+    "edgeLengths": [15.0, 17.57, 15.0, 17.57],
+    "areaSqM": 263.5,
+    "zone": "Central Residency",
+    "typeOfDevelopment": "Residential Detached",
+    "status": "available",
+    "price": null,
+    "sellable": true
+  },
+  {
+    "id": "154",
+    "points": [[521, 1390], [657, 1390], [628, 1494], [460, 1494]],
+    "edgeLengths": [19.2, 17.3, 21.6, 17.3],
+    "areaSqM": 353.14,
+    "zone": "Central Residency",
+    "typeOfDevelopment": "Residential Detached",
+    "status": "available",
+    "price": null,
+    "sellable": true
+  },
+  {
+    "id": "164",
+    "points": [[356, 1546], [464, 1546], [464, 1708], [356, 1708]],
+    "edgeLengths": [15.0, 20.16, 15.0, 20.16],
+    "areaSqM": 302.46,
+    "zone": "Central Residency",
+    "typeOfDevelopment": "Residential Detached",
+    "status": "available",
+    "price": null,
+    "sellable": true
+  },
+  {
+    "id": "175",
+    "points": [[386, 1765], [528, 1765], [528, 1920], [386, 1920]],
+    "edgeLengths": [28.0, 32.76, 28.0, 32.76],
+    "areaSqM": 917.18,
+    "zone": "Central Residency",
+    "typeOfDevelopment": "Residential Detached",
+    "status": "available",
+    "price": null,
+    "sellable": true
+  },
+  {
+    "id": "amenity-area",
+    "points": [[305, 153], [871, 153], [871, 459], [305, 459]],
+    "edgeLengths": [],
+    "areaSqM": 4671.05,
+    "zone": null,
+    "typeOfDevelopment": null,
+    "status": null,
+    "price": null,
+    "sellable": false
+  }
+]

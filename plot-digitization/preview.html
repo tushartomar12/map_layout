@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Plot map</title>
+  <style>
+    * { box-sizing: border-box; }
+    html, body {
+      margin: 0;
+      height: 100%;
+      background: #d8d8d8;
+      color: #222;
+      font-family: system-ui, -apple-system, Segoe UI, sans-serif;
+    }
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 2;
+      padding: 10px 16px;
+      background: rgba(255, 255, 255, 0.92);
+      border-bottom: 1px solid #ccc;
+      backdrop-filter: blur(6px);
+    }
+    #wrap {
+      width: 100%;
+      height: calc(100% - 44px);
+      overflow: auto;
+      padding: 16px;
+    }
+    #map {
+      display: block;
+      width: min(100%, 1100px);
+      height: auto;
+      margin: 0 auto;
+      background: #e6e6e6;
+      box-shadow: 0 1px 8px rgba(0, 0, 0, 0.12);
+      overflow: visible;
+    }
+    .plot-label {
+      font-size: 10px;
+      font-weight: 700;
+      fill: #222 !important;
+      color: #222;
+      text-anchor: middle;
+      dominant-baseline: middle;
+      pointer-events: none;
+      paint-order: stroke fill;
+      stroke: #ffffff;
+      stroke-width: 3px;
+      stroke-linejoin: round;
+      stroke-opacity: 0.95;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <strong>Plot map</strong>
+    — <span id="status">Loading…</span>
+  </header>
+  <div id="wrap">
+    <svg
+      id="map"
+      xmlns="http://www.w3.org/2000/svg"
+      role="img"
+      aria-label="Plot map"
+      preserveAspectRatio="xMidYMid meet"
+    ></svg>
+  </div>
+  <script>
+    const SPECIAL = {
+      "amenity-area": { fill: "#93c5fd", stroke: "#1d4ed8" }, // blue
+      "PlayArea":     { fill: "#c4b5fd", stroke: "#6d28d9" }, // purple
+      "canal1":       { fill: "#5eead4", stroke: "#0f766e" }, // teal
+      "canal2":       { fill: "#67e8f9", stroke: "#0c4a6e" }, // lighter teal
+      "clubhouse":    { fill: "#fdba74", stroke: "#c2410c" }, // orange
+    };
+
+    const PLOT_STYLE = {
+      fill: "#faf7f0",
+      stroke: "#2a2a2a",
+    };
+
+    function styleFor(id) {
+      return SPECIAL[id] || PLOT_STYLE;
+    }
+
+    function centroid(points) {
+      let sx = 0, sy = 0;
+      for (const [x, y] of points) {
+        sx += x;
+        sy += y;
+      }
+      const n = points.length || 1;
+      return [sx / n, sy / n];
+    }
+
+    function boundsOf(plots) {
+      let minX = Infinity, minY = Infinity, maxX = -Infinity, maxY = -Infinity;
+      for (const plot of plots) {
+        for (const [x, y] of plot.points) {
+          if (x < minX) minX = x;
+          if (y < minY) minY = y;
+          if (x > maxX) maxX = x;
+          if (y > maxY) maxY = y;
+        }
+      }
+      return { minX, minY, maxX, maxY };
+    }
+
+    async function main() {
+      const status = document.getElementById("status");
+      const svg = document.getElementById("map");
+
+      const plots = await fetch("data/traced-points.json").then((r) => {
+        if (!r.ok) throw new Error(`Failed to load traced-points.json (${r.status})`);
+        return r.json();
+      });
+
+      const byId = Object.fromEntries(plots.map((p) => [p.id, p]));
+      const hasCanal1 = Boolean(byId.canal1);
+      const hasCanal2 = Boolean(byId.canal2);
+
+      const { minX, minY, maxX, maxY } = boundsOf(plots);
+      // Padding keeps bottom-row plots (175–182) and canal2 fully inside the frame.
+      const pad = 40;
+      const viewX = minX - pad;
+      const viewY = minY - pad;
+      const viewW = (maxX - minX) + pad * 2;
+      const viewH = (maxY - minY) + pad * 2;
+
+      svg.setAttribute("viewBox", `${viewX} ${viewY} ${viewW} ${viewH}`);
+
+      const bg = document.createElementNS("http://www.w3.org/2000/svg", "rect");
+      bg.setAttribute("x", String(viewX));
+      bg.setAttribute("y", String(viewY));
+      bg.setAttribute("width", String(viewW));
+      bg.setAttribute("height", String(viewH));
+      bg.setAttribute("fill", "#e6e6e6");
+      svg.appendChild(bg);
+
+      const shapesLayer = document.createElementNS("http://www.w3.org/2000/svg", "g");
+      shapesLayer.setAttribute("id", "shapes");
+      const labelsLayer = document.createElementNS("http://www.w3.org/2000/svg", "g");
+      labelsLayer.setAttribute("id", "labels");
+      svg.appendChild(shapesLayer);
+      svg.appendChild(labelsLayer);
+
+      const genericPlots = plots.filter((plot) => !Object.prototype.hasOwnProperty.call(SPECIAL, plot.id));
+      const specialPlots = plots.filter((plot) => Object.prototype.hasOwnProperty.call(SPECIAL, plot.id));
+
+      for (const plot of [...genericPlots, ...specialPlots]) {
+        const style = styleFor(plot.id);
+        const poly = document.createElementNS("http://www.w3.org/2000/svg", "polygon");
+        poly.setAttribute(
+          "points",
+          plot.points.map(([x, y]) => `${x},${y}`).join(" ")
+        );
+        poly.setAttribute("fill", style.fill);
+        poly.setAttribute("stroke", style.stroke);
+        poly.setAttribute("stroke-width", plot.id.startsWith("canal") ? "2" : "1.25");
+        poly.setAttribute("vector-effect", "non-scaling-stroke");
+        poly.setAttribute("data-id", plot.id);
+        shapesLayer.appendChild(poly);
+      }
+
+      for (const plot of plots) {
+        const [cx, cy] = centroid(plot.points);
+        const label = document.createElementNS("http://www.w3.org/2000/svg", "text");
+        label.setAttribute("x", String(cx));
+        label.setAttribute("y", String(cy));
+        label.setAttribute("class", "plot-label");
+        label.setAttribute("fill", "#222");
+        label.setAttribute("font-size", "10");
+        label.setAttribute("font-weight", "700");
+        label.textContent = plot.id;
+        labelsLayer.appendChild(label);
+      }
+
+      const canalNote = `canal1=${hasCanal1 ? "yes" : "MISSING"}, canal2=${hasCanal2 ? "yes" : "MISSING"}`;
+      status.textContent =
+        `${plots.length} plots · ${canalNote} · bounds ` +
+        `${minX.toFixed(1)},${minY.toFixed(1)} → ${maxX.toFixed(1)},${maxY.toFixed(1)} · ` +
+        `viewBox ${viewX.toFixed(1)} ${viewY.toFixed(1)} ${viewW.toFixed(1)} ${viewH.toFixed(1)}`;
+    }
+
+    main().catch((err) => {
+      document.getElementById("status").textContent = err.message;
+      console.error(err);
+    });
+  </script>
+</body>
+</html>
