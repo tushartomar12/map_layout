@@ -11,7 +11,7 @@ body:has(.map-root) {
 }
 
 .map-root {
-  --map-header-height: 3rem;
+
   display: flex;
   flex-direction: column;
   width: 100vw;
@@ -19,11 +19,6 @@ body:has(.map-root) {
   height: 100dvh;
   max-height: 100dvh;
   overflow: hidden;
-}
-
-.map-header {
-  flex: 0 0 var(--map-header-height);
-  height: var(--map-header-height);
 }
 
 .map-main {

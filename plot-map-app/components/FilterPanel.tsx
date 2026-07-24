@@ -31,18 +31,18 @@ function PanelContent({
   onReset,
 }: FilterPanelProps) {
   return (
-    <div className="space-y-4 text-white">
+    <div className="space-y-3 text-white">
       <div>
         <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-white/55">
           Find Plot
         </p>
-        <label className="mt-2 flex items-center gap-2 rounded-2xl border border-white/10 bg-white/8 px-3 py-2.5 shadow-sm backdrop-blur">
+        <label className="mt-1.5 flex items-center gap-2 rounded-2xl border border-white/10 bg-white/8 px-2.5 py-2 shadow-sm backdrop-blur">
           <Search className="h-4 w-4 text-white/60" />
           <input
             value={searchValue}
             onChange={(event) => onSearchChange(event.target.value)}
             placeholder="Type plot id"
-            className="w-full bg-transparent text-sm text-white outline-none placeholder:text-white/40"
+            className="w-full bg-transparent text-[13px] text-white outline-none placeholder:text-white/40"
           />
         </label>
       </div>
@@ -51,7 +51,7 @@ function PanelContent({
         <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-white/55">
           Status
         </p>
-        <div className="mt-2 flex flex-wrap gap-2">
+        <div className="mt-1.5 flex flex-wrap gap-1.5">
           {STATUS_OPTIONS.map((option) => {
             const active = option.id === activeStatus;
             return (
@@ -59,7 +59,7 @@ function PanelContent({
                 key={option.id}
                 type="button"
                 onClick={() => onStatusChange(option.id)}
-                className={`rounded-full border px-3 py-1.5 text-xs font-semibold transition ${
+                className={`rounded-full border px-2.5 py-1 text-[11px] font-semibold transition ${
                   active
                     ? "border-cyan-400/80 bg-cyan-400/18 text-cyan-100 shadow-[0_0_0_1px_rgba(34,211,238,0.14)]"
                     : "border-white/10 bg-white/6 text-white/70 hover:bg-white/10"
@@ -72,7 +72,7 @@ function PanelContent({
         </div>
       </div>
 
-      <div className="flex items-center justify-between rounded-2xl border border-white/10 bg-white/8 px-3 py-3">
+      <div className="flex items-center justify-between rounded-2xl border border-white/10 bg-white/8 px-3 py-2.5">
         <div>
           <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-white/55">
             Matching Plots
@@ -85,7 +85,7 @@ function PanelContent({
         <button
           type="button"
           onClick={onReset}
-          className="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/10 px-3 py-2 text-xs font-semibold text-white/85 transition hover:bg-white/14"
+          className="inline-flex items-center gap-1.5 rounded-xl border border-white/10 bg-white/10 px-2.5 py-1.5 text-[11px] font-semibold text-white/85 transition hover:bg-white/14"
         >
           <RotateCcw className="h-3.5 w-3.5" />
           Reset
@@ -111,13 +111,13 @@ export default function FilterPanel(props: FilterPanelProps) {
         </button>
       </div>
 
-      <div className="absolute left-3 top-3 z-30 hidden w-[320px] rounded-3xl border border-white/10 bg-[#111827]/88 p-4 shadow-2xl backdrop-blur md:block">
-        <div className="mb-4 flex items-center justify-between">
+      <div className="absolute left-3 top-3 z-30 hidden w-[285px] rounded-3xl border border-white/10 bg-[#111827]/88 p-3.5 shadow-2xl backdrop-blur md:block">
+        <div className="mb-3 flex items-center justify-between">
           <div>
             <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-white/50">
               Search & Filters
             </p>
-            <p className="text-sm font-medium text-white">Refine visible plots</p>
+            <p className="text-[13px] font-medium text-white">Refine visible plots</p>
           </div>
           <SlidersHorizontal className="h-4 w-4 text-cyan-300" />
         </div>
@@ -131,16 +131,16 @@ export default function FilterPanel(props: FilterPanelProps) {
         onClick={() => setMobileOpen(false)}
       />
       <div
-        className={`absolute left-3 top-3 z-50 w-[min(320px,calc(100vw-1.5rem))] rounded-3xl border border-white/10 bg-[#111827]/92 p-4 shadow-2xl backdrop-blur transition-all duration-200 md:hidden ${
+        className={`absolute left-3 top-3 z-50 w-[min(285px,calc(100vw-1.5rem))] rounded-3xl border border-white/10 bg-[#111827]/92 p-3.5 shadow-2xl backdrop-blur transition-all duration-200 md:hidden ${
           mobileOpen ? "translate-y-0 opacity-100" : "pointer-events-none -translate-y-3 opacity-0"
         }`}
       >
-        <div className="mb-4 flex items-center justify-between">
+        <div className="mb-3 flex items-center justify-between">
           <div>
             <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-white/50">
               Search & Filters
             </p>
-            <p className="text-sm font-medium text-white">Refine visible plots</p>
+            <p className="text-[13px] font-medium text-white">Refine visible plots</p>
           </div>
           <button
             type="button"

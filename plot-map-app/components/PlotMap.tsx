@@ -66,7 +66,7 @@ type PlotMapProps = {
 
 const LANDMARK_COLORS: Record<string, { fillId: string; stroke: string }> = {
   "amenity-area": { fillId: "fill-amenity-area", stroke: "#d97706" },
-  PlayArea: { fillId: "fill-PlayArea", stroke: "#6d28d9" },
+  PlayArea: { fillId: "fill-PlayArea", stroke: "#16a34a" },
   ClubHouse: { fillId: "fill-clubhouse", stroke: "#c2410c" },
   clubhouse: { fillId: "fill-clubhouse", stroke: "#c2410c" },
   canal1: { fillId: "fill-canal1", stroke: "#0f766e" },
@@ -79,11 +79,11 @@ const LANDMARK_COLORS: Record<string, { fillId: string; stroke: string }> = {
 const CANAL_IDS = new Set(["canal1", "canal2", "Canal_2", "Canal_3"]);
 
 const LEGEND_ITEMS = [
-  { label: "Unsold", fill: "#dcfce7", stroke: "#16a34a" },
-  { label: "Sold", fill: "#fecaca", stroke: "#ef4444" },
+  { label: "Unsold", fill: "#16a34a", stroke: "#15803d" },
+  { label: "Sold", fill: "#dc2626", stroke: "#b91c1c" },
   { label: "Under Development", fill: "#93c5fd", stroke: "#2563eb" },
   { label: "Amenity", fill: "#fef3c7", stroke: "#d97706" },
-  { label: "Play Area", fill: "#c4b5fd", stroke: "#6d28d9" },
+  { label: "Play Area", fill: "#86efac", stroke: "#16a34a" },
   { label: "Clubhouse", fill: "#fdba74", stroke: "#c2410c" },
   { label: "Canal", fill: "#5eead4", stroke: "#0f766e" },
   { label: "Park", fill: "#86efac", stroke: "#16a34a" },
@@ -780,8 +780,8 @@ const ZoomControls = memo(function ZoomControls({
 
 const MapStatusBar = memo(function MapStatusBar() {
   const items = [
-    { label: "Sold", fill: "#f87171", stroke: "#ef4444" },
-    { label: "Unsold", fill: "#86efac", stroke: "#16a34a" },
+    { label: "Sold", fill: "#dc2626", stroke: "#b91c1c" },
+    { label: "Unsold", fill: "#16a34a", stroke: "#15803d" },
     { label: "Under Development", fill: "#93c5fd", stroke: "#2563eb" },
   ] as const;
 
@@ -1201,12 +1201,12 @@ export default function PlotMap({
           </pattern>
         ) : null}
         <linearGradient id="fill-available" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stopColor="#eefcf2" />
-          <stop offset="100%" stopColor="#bbf7d0" />
+          <stop offset="0%" stopColor="#22c55e" />
+          <stop offset="100%" stopColor="#16a34a" />
         </linearGradient>
         <linearGradient id="fill-sold" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stopColor="#fecaca" />
-          <stop offset="100%" stopColor="#f87171" />
+          <stop offset="0%" stopColor="#ef4444" />
+          <stop offset="100%" stopColor="#dc2626" />
         </linearGradient>
         <linearGradient id="fill-under-development" x1="0" y1="0" x2="0" y2="1">
           <stop offset="0%" stopColor="#dbeafe" />
@@ -1221,8 +1221,8 @@ export default function PlotMap({
           <stop offset="100%" stopColor="#fbbf24" />
         </linearGradient>
         <linearGradient id="fill-PlayArea" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stopColor="#ddd6fe" />
-          <stop offset="100%" stopColor="#c4b5fd" />
+          <stop offset="0%" stopColor="#bbf7d0" />
+          <stop offset="100%" stopColor="#86efac" />
         </linearGradient>
         <linearGradient id="fill-clubhouse" x1="0" y1="0" x2="0" y2="1">
           <stop offset="0%" stopColor="#fed7aa" />
