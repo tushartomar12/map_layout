@@ -7,7 +7,7 @@ export interface Plot {
   category: PlotCategory;
   points: [number, number][];
   sellable: boolean;
-  edgeLengths: number[] | null;
+  edgeLengths: Array<number | null> | null;
   areaSqM: number | null;
   zone: string;
   typeOfDevelopment: string;
@@ -15,4 +15,5 @@ export interface Plot {
   status: PlotStatus;
   price: number | null;
   dataComplete: boolean;
+  facingRoad?: string | null;
 }

@@ -1,37 +1,39 @@
-# Plot Map Layout
+# Tarun Plantation Layout
 
-Interactive SVG-based plot map with roads, landmarks, grass texture, filters, and plot detail popups.
+Interactive plot layout map for Tarun Plantation, featuring real-time plot status, filtering, and detailed SVG-based interactive map visualization.
 
-## Project structure
+## Tech Stack
 
-- `plot-map-app/` — Next.js app for the interactive map
-- `plot-digitization/` — source SVG assets, generated JSON, and preview tools
-- `parse_svg_to_json.py` — converts `full-layout.svg` into layout JSON
-- `merge_plot_data.py` — merges layout geometry with plot business data
+- **Framework**: Next.js (App Router)
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS
+- **Icons**: Lucide React
+- **Map/SVG**: React-use-gesture for interactions, SVG textPath for labels
 
-## Run locally
+## Running Locally
 
-```bash
-cd plot-map-app
-npm install
-npm run dev
-```
+1. Clone the repository.
+2. Navigate to the web app directory:
+   ``bash
+   cd plot-map-app
+   ``
+3. Install dependencies:
+   ``bash
+   npm install
+   ``
+4. Set up environment variables by copying .env.example to .env.local and filling in the required credentials.
+5. Start the development server:
+   ``bash
+   npm run dev
+   ``
+6. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-Open [http://localhost:3000](http://localhost:3000).
+## Data Processing Pipeline
 
-## Regenerate map data
+The /plot-digitization folder contains the original data-processing pipeline used to build the core plots.master.json dataset from the original layout traces (PDFs, Excel files, SVG vectors). 
 
-```bash
-python parse_svg_to_json.py
-python merge_plot_data.py
-```
+It includes:
+- /source-docs/: Original reference documents.
+- /scripts/: Python scripts (parse_svg_to_json.py, merge_plot_data.py, etc.) used to extract geometry from SVGs, match with Excel dimensions, compute facing roads, and generate the final JSON.
 
-Then copy `plot-digitization/data/plots.master.v2.json` into `plot-map-app/data/plots.master.json`.
-
-## Production build
-
-```bash
-cd plot-map-app
-npm run build
-npm run start
-```
+This folder is preserved as an archive in case the data needs to be re-run, corrected, or extended with new plot arrivals in the future.

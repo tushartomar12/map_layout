@@ -1,14 +1,16 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
+import PlotSketch from "@/components/PlotSketch";
+import { parseVerticalEdges } from "@/lib/edgeOrientation";
+import { UNDER_DEVELOPMENT_MESSAGE } from "@/lib/underDevelopmentPlots";
 import type { Plot, PlotStatus } from "@/types/plot";
 
 type PlotPopupProps = {
   plot: Plot;
   onClose: () => void;
 };
-
-const SKETCH_SIZE = 300;
 
 function formatInr(price: number): string {
   return new Intl.NumberFormat("en-IN", {
@@ -18,239 +20,128 @@ function formatInr(price: number): string {
   }).format(price);
 }
 
+function formatMeters(length: number): string {
+  return `${length.toFixed(2)} m`;
+}
+
 function statusMeta(status: PlotStatus): {
   label: string;
   dot: string;
   pill: string;
 } {
-  if (status === "available") {
-    return {
-      label: "AVAILABLE",
-      dot: "bg-emerald-400",
-      pill: "bg-emerald-500/15 text-emerald-300 ring-emerald-400/30",
-    };
-  }
   if (status === "sold") {
     return {
       label: "SOLD",
-      dot: "bg-red-400",
-      pill: "bg-red-500/15 text-red-300 ring-red-400/30",
+      dot: "bg-red-500",
+      pill: "bg-red-500/20 text-red-300 ring-red-500/40",
+    };
+  }
+  if (status === "under-development") {
+    return {
+      label: "UNDER DEVELOPMENT",
+      dot: "bg-blue-500",
+      pill: "bg-blue-500/20 text-blue-300 ring-blue-500/40",
     };
   }
   return {
-    label: "UNDER DEVELOPMENT",
-    dot: "bg-neutral-400",
-    pill: "bg-neutral-500/20 text-neutral-300 ring-neutral-400/30",
+    label: "AVAILABLE",
+    dot: "bg-emerald-400",
+    pill: "bg-emerald-500/15 text-emerald-300 ring-emerald-400/30",
   };
 }
 
-function displayOrComingSoon(
-  value: string | number | null | undefined,
-  dataComplete: boolean,
-): string {
-  if (!dataComplete) return "Details coming soon";
+function displayValue(value: string | number | null | undefined): string {
   if (value === null || value === undefined || value === "") {
-    return "Details coming soon";
+    return "TBD";
   }
   return String(value);
 }
 
-function plotDescription(plot: Plot): string {
-  const explicit = plot.description?.trim();
-  if (explicit) return explicit;
-
-  if (!plot.dataComplete) {
-    return "Full plot description will be available once the builder confirms the final details for this inventory.";
-  }
-
-  if (plot.status === "sold") {
-    return `Plot ${plot.id} is part of the ${plot.zone || "project"} inventory and has already been sold.`;
-  }
-
-  if (plot.status === "available") {
-    return `Plot ${plot.id} is currently available ${plot.zone ? `in the ${plot.zone} zone` : "for enquiry"}${plot.areaSqM ? ` with an area of ${plot.areaSqM} sqm` : ""}.`;
-  }
-
-  return `Plot ${plot.id} is currently under development${plot.zone ? ` in the ${plot.zone} zone` : ""}.`;
-}
-
-const SKETCH_PAD = 36;
-
-function normalizeSketch(points: [number, number][]) {
-  const xs = points.map(([x]) => x);
-  const ys = points.map(([, y]) => y);
-  const minX = Math.min(...xs);
-  const maxX = Math.max(...xs);
-  const minY = Math.min(...ys);
-  const maxY = Math.max(...ys);
-  const width = Math.max(maxX - minX, 1);
-  const height = Math.max(maxY - minY, 1);
-  const inner = SKETCH_SIZE - SKETCH_PAD * 2;
-  const scale = Math.min(inner / width, inner / height);
-  const drawnW = width * scale;
-  const drawnH = height * scale;
-  const offsetX = (SKETCH_SIZE - drawnW) / 2;
-  const offsetY = (SKETCH_SIZE - drawnH) / 2;
-
-  const scaled = points.map(
-    ([x, y]) =>
-      [
-        offsetX + (x - minX) * scale,
-        offsetY + (y - minY) * scale,
-      ] as [number, number],
-  );
-
-  let cx = 0;
-  let cy = 0;
-  for (const [x, y] of scaled) {
-    cx += x;
-    cy += y;
-  }
-  cx /= scaled.length || 1;
-  cy /= scaled.length || 1;
-
-  return { scaled, cx, cy };
-}
-
-function edgeMidOutside(
-  a: [number, number],
-  b: [number, number],
-  cx: number,
-  cy: number,
-  offset = 14,
-): { x: number; y: number; angle: number } {
-  const mx = (a[0] + b[0]) / 2;
-  const my = (a[1] + b[1]) / 2;
-  let nx = mx - cx;
-  let ny = my - cy;
-  const len = Math.hypot(nx, ny) || 1;
-  nx /= len;
-  ny /= len;
-  const angle = (Math.atan2(b[1] - a[1], b[0] - a[0]) * 180) / Math.PI;
-  let labelAngle = angle;
-  if (labelAngle > 90 || labelAngle < -90) labelAngle += 180;
-  return {
-    x: mx + nx * offset,
-    y: my + ny * offset,
-    angle: labelAngle,
-  };
-}
-
 function deriveDimension(plot: Plot): string {
-  if (!plot.dataComplete) return "Details coming soon";
-  if (!plot.edgeLengths || plot.edgeLengths.length < 2 || plot.points.length < 3) {
-    return "TBD";
+  const vertical = parseVerticalEdges(plot.edgeLengths);
+  const widths = [vertical.top, vertical.bottom].filter(
+    (value): value is number => typeof value === "number" && Number.isFinite(value),
+  );
+  const depths = [vertical.left, vertical.right].filter(
+    (value): value is number => typeof value === "number" && Number.isFinite(value),
+  );
+
+  if (widths.length > 0 && depths.length > 0) {
+    const width = widths.reduce((sum, value) => sum + value, 0) / widths.length;
+    const depth = depths.reduce((sum, value) => sum + value, 0) / depths.length;
+    return `${formatMeters(width)} x ${formatMeters(depth)}`;
   }
 
-  const edges: { length: number; dx: number; dy: number }[] = [];
-  const n = plot.points.length;
-  for (let i = 0; i < n; i += 1) {
-    const [x1, y1] = plot.points[i];
-    const [x2, y2] = plot.points[(i + 1) % n];
-    const dx = x2 - x1;
-    const dy = y2 - y1;
-    const length =
-      plot.edgeLengths[i] ??
-      plot.edgeLengths[i % plot.edgeLengths.length] ??
-      Math.hypot(dx, dy);
-    edges.push({ length, dx, dy });
-  }
-
-  let best: [number, number] | null = null;
-  let bestScore = -1;
-  for (let i = 0; i < edges.length; i += 1) {
-    for (let j = i + 1; j < edges.length; j += 1) {
-      const a = edges[i];
-      const b = edges[j];
-      const la = Math.hypot(a.dx, a.dy) || 1;
-      const lb = Math.hypot(b.dx, b.dy) || 1;
-      const dot = Math.abs((a.dx * b.dx + a.dy * b.dy) / (la * lb));
-      if (dot > 0.35) continue;
-      const score = (1 - dot) * (a.length + b.length);
-      if (score > bestScore) {
-        bestScore = score;
-        best = [a.length, b.length];
-      }
+  const edges = (plot.edgeLengths ?? []).filter(
+    (value): value is number => typeof value === "number" && Number.isFinite(value),
+  );
+  if (edges.length >= 2) {
+    const unique = Array.from(
+      new Set(edges.map((value) => Number(value.toFixed(2)))),
+    ).sort((a, b) => b - a);
+    if (unique.length >= 2) {
+      return `${formatMeters(unique[0])} x ${formatMeters(unique[1])}`;
     }
+    return `${formatMeters(unique[0])} x ${formatMeters(unique[0])}`;
   }
-
-  if (!best) {
-    const sorted = [...edges].sort((a, b) => b.length - a.length);
-    best = [sorted[0].length, sorted[1].length];
+  if (edges.length === 1) {
+    return formatMeters(edges[0]);
   }
-
-  const [a, b] = best;
-  const fmt = (v: number) =>
-    Number.isInteger(v) ? String(v) : v.toFixed(2).replace(/\.?0+$/, "");
-  return `${fmt(Math.max(a, b))} m x ${fmt(Math.min(a, b))} m`;
+  return "TBD";
 }
 
-function PlotSketch({ plot }: { plot: Plot }) {
-  const { scaled, cx, cy } = useMemo(
-    () => normalizeSketch(plot.points),
-    [plot.points],
-  );
-  const hasEdges = Boolean(plot.edgeLengths && plot.edgeLengths.length > 0);
+function SketchOverride({ plot, fallback }: { plot: Plot; fallback: React.ReactNode }) {
+  const [imageState, setImageState] = useState<"loading" | "found" | "error">("loading");
+  const [ext, setExt] = useState<"png" | "jpg">("png");
+
+  useEffect(() => {
+    setImageState("loading");
+    let isMounted = true;
+
+    const imgPng = new window.Image();
+    imgPng.onload = () => {
+      if (!isMounted) return;
+      setExt("png");
+      setImageState("found");
+    };
+    imgPng.onerror = () => {
+      if (!isMounted) return;
+      const imgJpg = new window.Image();
+      imgJpg.onload = () => {
+        if (!isMounted) return;
+        setExt("jpg");
+        setImageState("found");
+      };
+      imgJpg.onerror = () => {
+        if (!isMounted) return;
+        setImageState("error");
+      };
+      imgJpg.src = `/plot-sketches/${plot.id}.jpg`;
+    };
+    imgPng.src = `/plot-sketches/${plot.id}.png`;
+
+    return () => {
+      isMounted = false;
+    };
+  }, [plot.id]);
+
+  if (imageState === "error") {
+    return <>{fallback}</>;
+  }
 
   return (
-    <div className="relative rounded-2xl bg-white p-4 shadow-inner">
-      <svg
-        viewBox={`0 0 ${SKETCH_SIZE} ${SKETCH_SIZE}`}
-        className="mx-auto block h-auto w-full max-w-[300px]"
-        role="img"
-        aria-label={`Sketch of plot ${plot.id}`}
-      >
-        <polygon
-          points={scaled.map(([x, y]) => `${x},${y}`).join(" ")}
-          fill="#fafafa"
-          stroke="#111"
-          strokeWidth={2}
+    <div className="relative flex min-h-[260px] w-full items-center justify-center overflow-hidden rounded-2xl bg-white shadow-inner">
+      {imageState === "loading" ? (
+        <div className="flex h-full w-full items-center justify-center">
+          <div className="h-6 w-6 animate-spin rounded-full border-2 border-neutral-300 border-t-neutral-500" />
+        </div>
+      ) : (
+        <img
+          src={`/plot-sketches/${plot.id}.${ext}`}
+          alt={`Plot ${plot.id} sketch`}
+          className="h-full w-full object-contain"
         />
-        <text
-          x={cx}
-          y={cy}
-          textAnchor="middle"
-          dominantBaseline="middle"
-          fill="#111"
-          fontSize={22}
-          fontWeight={700}
-          style={{ fontFamily: "system-ui, sans-serif" }}
-        >
-          {plot.id}
-        </text>
-        {hasEdges &&
-          scaled.map((point, index) => {
-            const next = scaled[(index + 1) % scaled.length];
-            const length = plot.edgeLengths?.[index];
-            if (length == null) return null;
-            const label = edgeMidOutside(point, next, cx, cy);
-            const text =
-              Number.isInteger(length) ? `${length} m` : `${length.toFixed(2)} m`;
-            return (
-              <text
-                key={`edge-${index}`}
-                x={label.x}
-                y={label.y}
-                textAnchor="middle"
-                dominantBaseline="middle"
-                fill="#374151"
-                fontSize={11}
-                fontWeight={600}
-                transform={`rotate(${label.angle} ${label.x} ${label.y})`}
-                style={{ fontFamily: "system-ui, sans-serif" }}
-              >
-                {text}
-              </text>
-            );
-          })}
-      </svg>
-
-      {!hasEdges && (
-        <p className="mt-2 text-center text-xs text-neutral-500">
-          Exact dimensions pending
-        </p>
       )}
-
       <span className="absolute bottom-3 right-3 rounded-full bg-neutral-900 px-3 py-1 text-[10px] font-semibold tracking-[0.12em] text-amber-100/90">
         PLOT SKETCH
       </span>
@@ -260,19 +151,66 @@ function PlotSketch({ plot }: { plot: Plot }) {
 
 export default function PlotPopup({ plot, onClose }: PlotPopupProps) {
   const status = statusMeta(plot.status);
-  const zone = displayOrComingSoon(plot.zone || null, plot.dataComplete);
-  const area = !plot.dataComplete
-    ? "Details coming soon"
-    : plot.areaSqM == null
-      ? "TBD"
-      : `${plot.areaSqM} sqm`;
+  const area = plot.areaSqM == null ? "TBD" : `${plot.areaSqM} sq.m`;
   const dimension = deriveDimension(plot);
-  const development = displayOrComingSoon(
-    plot.typeOfDevelopment || null,
-    plot.dataComplete,
-  );
-  const description = plotDescription(plot);
+  const development = displayValue(plot.typeOfDevelopment || null);
+  const [showForm, setShowForm] = useState(false);
   const [visible, setVisible] = useState(false);
+  
+  const [formData, setFormData] = useState({ name: "", email: "", mobile: "", address: "" });
+  const [errors, setErrors] = useState<Record<string, string>>({});
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
+  const [isSuccess, setIsSuccess] = useState(false);
+
+  const validateForm = () => {
+    const newErrors: Record<string, string> = {};
+    if (!formData.name.trim()) newErrors.name = "Please enter your name.";
+    
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!formData.email.trim() || !emailRegex.test(formData.email.trim())) {
+      newErrors.email = "Please enter a valid email address.";
+    }
+
+    const mobileDigits = formData.mobile.replace(/\D/g, "");
+    const coreNumber = mobileDigits.startsWith("91") && mobileDigits.length === 12 
+      ? mobileDigits.substring(2) 
+      : mobileDigits;
+    
+    if (coreNumber.length !== 10) {
+      newErrors.mobile = "Please enter a valid 10-digit mobile number.";
+    }
+
+    if (!formData.address.trim()) newErrors.address = "Please enter your address.";
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setSubmitError(null);
+    
+    if (!validateForm()) return;
+    
+    setIsSubmitting(true);
+    try {
+      const res = await fetch("/api/enquiries", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ ...formData, plotId: plot.id }),
+      });
+      
+      if (!res.ok) throw new Error("Submission failed");
+      setIsSuccess(true);
+    } catch {
+      setSubmitError("Something went wrong, please try again or contact us directly.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  const isFormEmpty = !formData.name.trim() || !formData.email.trim() || !formData.mobile.trim() || !formData.address.trim();
 
   useEffect(() => {
     setVisible(true);
@@ -329,22 +267,17 @@ export default function PlotPopup({ plot, onClose }: PlotPopupProps) {
               Plot {plot.id}
             </h2>
 
-            {!plot.dataComplete && (
-              <p className="rounded-xl border border-amber-400/20 bg-amber-400/10 px-4 py-3 text-sm text-amber-100/90">
-                Details coming soon — final plot specs will appear here once
-                confirmed by the builder.
-              </p>
-            )}
-
-            <PlotSketch plot={plot} />
+            <SketchOverride plot={plot} fallback={<PlotSketch plot={plot} />} />
           </div>
 
           <div className="flex flex-col gap-4 lg:pt-10">
-            <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
+            <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
               {[
-                { label: "ZONE", value: zone },
                 { label: "AREA", value: area },
                 { label: "DIMENSION", value: dimension },
+                ...(plot.sellable && plot.facingRoad
+                  ? [{ label: "FACING", value: `Faces ${plot.facingRoad}` }]
+                  : []),
               ].map((card) => (
                 <div
                   key={card.label}
@@ -367,42 +300,123 @@ export default function PlotPopup({ plot, onClose }: PlotPopupProps) {
               <p className="text-base font-medium text-white">{development}</p>
             </div>
 
-            <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-5">
-              <p className="mb-2 text-[11px] font-semibold tracking-[0.16em] text-amber-100/70">
-                PLOT DESCRIPTION
-              </p>
-              <p className="text-sm leading-7 text-neutral-200">{description}</p>
-            </div>
-
             {plot.status === "available" && (
               <div className="rounded-2xl border border-emerald-400/20 bg-emerald-500/10 p-5">
                 <p className="mb-2 text-[11px] font-semibold tracking-[0.16em] text-emerald-200/80">
                   PRICE
                 </p>
-                <p className="text-2xl font-semibold text-emerald-300">
-                  {!plot.dataComplete
-                    ? "Details coming soon"
-                    : plot.price == null
-                      ? "Price on request"
-                      : formatInr(plot.price)}
+                <p className="mb-4 text-2xl font-semibold text-emerald-300">
+                  {plot.price == null ? "Price on request" : formatInr(plot.price)}
                 </p>
+                
+                {isSuccess ? (
+                  <div className="mt-6 rounded-xl bg-white/[0.03] border border-emerald-500/30 p-5">
+                    <p className="text-emerald-300 font-medium text-lg mb-6">
+                      Thank you! We&apos;ll get in touch with you soon.
+                    </p>
+                    <p className="mb-3 text-[11px] font-semibold tracking-[0.16em] text-emerald-200/80 uppercase">
+                      CALL / WHATSAPP
+                    </p>
+                    <div className="flex flex-col gap-3">
+                      <div className="flex items-center gap-3">
+                        <a href="tel:+919818318132" className="text-xl font-medium text-white transition hover:text-emerald-300">
+                          +91 98183 18132
+                        </a>
+                        <a href="https://wa.me/919818318132" target="_blank" rel="noopener noreferrer" className="flex h-8 w-8 items-center justify-center rounded-full bg-[#25D366]/20 text-[#25D366] transition hover:bg-[#25D366]/30">
+                          <svg viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                        </a>
+                      </div>
+                      <div className="flex items-center gap-3">
+                        <a href="tel:+919811718331" className="text-xl font-medium text-white transition hover:text-emerald-300">
+                          +91 98117 18331
+                        </a>
+                        <a href="https://wa.me/919811718331" target="_blank" rel="noopener noreferrer" className="flex h-8 w-8 items-center justify-center rounded-full bg-[#25D366]/20 text-[#25D366] transition hover:bg-[#25D366]/30">
+                          <svg viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                ) : !showForm ? (
+                  <button
+                    type="button"
+                    onClick={() => setShowForm(true)}
+                    className="w-full rounded-xl bg-emerald-500 px-4 py-3 text-sm font-semibold tracking-wide text-neutral-950 transition hover:bg-emerald-400"
+                  >
+                    Enquire Now
+                  </button>
+                ) : (
+                  <form onSubmit={handleSubmit} className="mt-4 flex flex-col gap-4">
+                    <div>
+                      <input
+                        type="text"
+                        placeholder="Name"
+                        value={formData.name}
+                        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                        className="w-full rounded-lg border border-emerald-500/30 bg-emerald-950/40 px-4 py-2.5 text-sm text-emerald-100 placeholder-emerald-200/50 focus:border-emerald-400 focus:outline-none focus:ring-1 focus:ring-emerald-400 transition"
+                      />
+                      {errors.name && <p className="mt-1 text-xs text-red-400">{errors.name}</p>}
+                    </div>
+                    <div>
+                      <input
+                        type="email"
+                        placeholder="Email"
+                        value={formData.email}
+                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                        className="w-full rounded-lg border border-emerald-500/30 bg-emerald-950/40 px-4 py-2.5 text-sm text-emerald-100 placeholder-emerald-200/50 focus:border-emerald-400 focus:outline-none focus:ring-1 focus:ring-emerald-400 transition"
+                      />
+                      {errors.email && <p className="mt-1 text-xs text-red-400">{errors.email}</p>}
+                    </div>
+                    <div>
+                      <input
+                        type="tel"
+                        inputMode="numeric"
+                        maxLength={10}
+                        placeholder="Mobile Number (10 digits)"
+                        value={formData.mobile}
+                        onChange={(e) => setFormData({ ...formData, mobile: e.target.value.replace(/\D/g, "") })}
+                        className="w-full rounded-lg border border-emerald-500/30 bg-emerald-950/40 px-4 py-2.5 text-sm text-emerald-100 placeholder-emerald-200/50 focus:border-emerald-400 focus:outline-none focus:ring-1 focus:ring-emerald-400 transition"
+                      />
+                      {errors.mobile && <p className="mt-1 text-xs text-red-400">{errors.mobile}</p>}
+                    </div>
+                    <div>
+                      <input
+                        type="text"
+                        placeholder="Address"
+                        value={formData.address}
+                        onChange={(e) => setFormData({ ...formData, address: e.target.value })}
+                        className="w-full rounded-lg border border-emerald-500/30 bg-emerald-950/40 px-4 py-2.5 text-sm text-emerald-100 placeholder-emerald-200/50 focus:border-emerald-400 focus:outline-none focus:ring-1 focus:ring-emerald-400 transition"
+                      />
+                      {errors.address && <p className="mt-1 text-xs text-red-400">{errors.address}</p>}
+                    </div>
+                    {submitError && <p className="text-sm text-red-400">{submitError}</p>}
+                    <button
+                      type="submit"
+                      disabled={isFormEmpty || isSubmitting}
+                      className="mt-2 w-full rounded-xl bg-emerald-500 px-4 py-3 text-sm font-semibold tracking-wide text-neutral-950 transition hover:bg-emerald-400 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
+                    >
+                      {isSubmitting ? (
+                        <span className="h-5 w-5 animate-spin rounded-full border-2 border-neutral-950 border-t-transparent" />
+                      ) : (
+                        "Submit Enquiry"
+                      )}
+                    </button>
+                  </form>
+                )}
               </div>
             )}
 
             {plot.status === "sold" && (
-              <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-5">
-                <p className="text-sm text-neutral-400">
+              <div className="rounded-2xl border border-red-500/35 bg-red-500/15 p-5">
+                <p className="text-sm font-medium text-red-300">
                   This plot has been sold
                 </p>
               </div>
             )}
 
             {plot.status === "under-development" && (
-              <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-5">
-                <p className="text-sm text-neutral-300">
-                  {plot.dataComplete
-                    ? "This plot is currently under development."
-                    : "Details coming soon for this plot."}
+              <div className="rounded-2xl border border-blue-500/35 bg-blue-500/15 p-5">
+                <p className="text-sm font-medium text-blue-300">
+                  {UNDER_DEVELOPMENT_MESSAGE}
                 </p>
               </div>
             )}
@@ -435,4 +449,3 @@ export default function PlotPopup({ plot, onClose }: PlotPopupProps) {
     </div>
   );
 }
-

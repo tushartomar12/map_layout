@@ -35,3 +35,11 @@ plot-map-app/next-env.d.ts
 
 # local verification screenshots
 plot-map-app/*.png
+
+# Raw Digitization Assets
+plot-digitization/assets/*.png
+plot-digitization/assets/*.svg
+lanne-8.svg
+plot-digitization/plots-group.svg
+
+.env
