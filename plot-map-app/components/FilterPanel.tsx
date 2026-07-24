@@ -16,7 +16,7 @@ type FilterPanelProps = {
 
 const STATUS_OPTIONS: Array<{ id: "all" | PlotStatus; label: string }> = [
   { id: "all", label: "All" },
-  { id: "available", label: "Available" },
+  { id: "available", label: "Unsold" },
   { id: "sold", label: "Sold" },
   { id: "under-development", label: "Under Development" },
 ];

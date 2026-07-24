@@ -14,19 +14,14 @@ type RawPlot = {
   status: string | null;
   price: number | null;
   dataComplete: boolean;
+  facingRoad?: string | null;
 };
 
-const ALLOWED_STATUS = new Set<PlotStatus>([
-  "available",
-  "sold",
-  "under-development",
-]);
-
 function normalizeStatus(status: string | null): PlotStatus {
-  if (status && ALLOWED_STATUS.has(status as PlotStatus)) {
-    return status as PlotStatus;
-  }
-  return "under-development";
+  if (status === "sold") return "sold";
+  if (status === "under-development") return "under-development";
+  if (status === "available") return "available";
+  return "available";
 }
 
 function normalizePlot(raw: RawPlot): Plot {
@@ -43,6 +38,7 @@ function normalizePlot(raw: RawPlot): Plot {
     status: normalizeStatus(raw.status),
     price: raw.price,
     dataComplete: raw.dataComplete,
+    facingRoad: raw.facingRoad ?? undefined,
   };
 }
 

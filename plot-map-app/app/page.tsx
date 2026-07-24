@@ -1,4 +1,5 @@
-import PlotMap from "@/components/PlotMap";
+import dynamic from "next/dynamic";
+const PlotMap = dynamic(() => import("@/components/PlotMap"), { ssr: false });
 import { getPlots } from "@/lib/plots";
 import "./map.css";
 

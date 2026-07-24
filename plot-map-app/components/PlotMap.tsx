@@ -49,6 +49,9 @@ type PreparedRoad = {
   centerPath: string;
   label: string;
   box: PlotBox;
+  pathLength: number;
+  labelGapStart: number;
+  labelGapEnd: number;
 };
 
 type PlotMapProps = {
@@ -62,7 +65,7 @@ type PlotMapProps = {
 };
 
 const LANDMARK_COLORS: Record<string, { fillId: string; stroke: string }> = {
-  "amenity-area": { fillId: "fill-amenity-area", stroke: "#1d4ed8" },
+  "amenity-area": { fillId: "fill-amenity-area", stroke: "#d97706" },
   PlayArea: { fillId: "fill-PlayArea", stroke: "#6d28d9" },
   ClubHouse: { fillId: "fill-clubhouse", stroke: "#c2410c" },
   clubhouse: { fillId: "fill-clubhouse", stroke: "#c2410c" },
@@ -76,15 +79,37 @@ const LANDMARK_COLORS: Record<string, { fillId: string; stroke: string }> = {
 const CANAL_IDS = new Set(["canal1", "canal2", "Canal_2", "Canal_3"]);
 
 const LEGEND_ITEMS = [
-  { label: "Available", fill: "#dcfce7", stroke: "#16a34a" },
-  { label: "Sold", fill: "#fee2e2", stroke: "#dc2626" },
-  { label: "Under Development", fill: "#f3f4f6", stroke: "#9ca3af" },
-  { label: "Amenity", fill: "#93c5fd", stroke: "#1d4ed8" },
+  { label: "Unsold", fill: "#dcfce7", stroke: "#16a34a" },
+  { label: "Sold", fill: "#fecaca", stroke: "#ef4444" },
+  { label: "Under Development", fill: "#93c5fd", stroke: "#2563eb" },
+  { label: "Amenity", fill: "#fef3c7", stroke: "#d97706" },
   { label: "Play Area", fill: "#c4b5fd", stroke: "#6d28d9" },
   { label: "Clubhouse", fill: "#fdba74", stroke: "#c2410c" },
   { label: "Canal", fill: "#5eead4", stroke: "#0f766e" },
   { label: "Park", fill: "#86efac", stroke: "#16a34a" },
 ];
+
+const MapBrandBadge = memo(function MapBrandBadge() {
+  return (
+    <div
+      className="pointer-events-none absolute right-5 top-5 z-30 flex items-center gap-3 rounded-xl border border-white/10 bg-[#0d0d0d]/90 px-5 py-3 shadow-2xl backdrop-blur"
+      aria-label="Tarun Plantation live plot map"
+    >
+      <span
+        className="h-2.5 w-2.5 shrink-0 rounded-full bg-[#2dd4bf]"
+        aria-hidden="true"
+      />
+      <div className="leading-tight">
+        <p className="text-[15px] font-bold uppercase tracking-[0.04em] text-white">
+          Tarun Plantation
+        </p>
+        <p className="mt-0.5 text-[11px] font-medium uppercase tracking-[0.16em] text-white/55">
+          Live Plot Map
+        </p>
+      </div>
+    </div>
+  );
+});
 
 function centroid(points: [number, number][]): [number, number] {
   let sx = 0;
@@ -138,11 +163,11 @@ function isInteractive(plot: Plot): boolean {
 }
 
 function sellableStyle(plot: Plot): { fillId: string; stroke: string } {
-  if (!plot.dataComplete || plot.status === "under-development") {
-    return { fillId: "fill-under-development", stroke: "#9ca3af" };
-  }
   if (plot.status === "sold") {
-    return { fillId: "fill-sold", stroke: "#dc2626" };
+    return { fillId: "fill-sold", stroke: "#ef4444" };
+  }
+  if (plot.status === "under-development") {
+    return { fillId: "fill-under-development", stroke: "#2563eb" };
   }
   return { fillId: "fill-available", stroke: "#16a34a" };
 }
@@ -150,7 +175,7 @@ function sellableStyle(plot: Plot): { fillId: string; stroke: string } {
 function landmarkStyle(plot: Plot): { fillId: string; stroke: string } {
   return (
     LANDMARK_COLORS[plot.id] ?? {
-      fillId: "fill-under-development",
+      fillId: "fill-landmark-default",
       stroke: "#9ca3af",
     }
   );
@@ -378,23 +403,120 @@ function fitBoundsToViewport(
   return { minX, minY, maxX, maxY };
 }
 
+const ROAD_LABEL_OFFSETS: Record<string, string> = {
+  "road-Lane1": "20%",
+  "road-Lane2": "30%",
+  "road-Lane3": "80%",
+  "road-Lane4": "30%",
+  "road-Lane5": "80%",
+  "road-Lane6": "30%",
+  "road-Lane7": "80%",
+  "road-Lane8": "40%",
+};
+
+const ROAD_LABEL_Y_OFFSETS: Record<string, number> = {
+  "road-Lane1": 55,
+  "road-Lane2": 45,
+  "road-Lane3": 15,
+  "road-Lane4": 15,
+  "road-Lane5": 15,
+  "road-Lane6": 15,
+  "road-Lane7": 55,
+  "road-Lane8": 15,
+};
+
+function clamp(value: number, min: number, max: number): number {
+  return Math.max(min, Math.min(max, value));
+}
+
+function measurePathLength(d: string): number {
+  if (typeof document === "undefined") return 0;
+  const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+  path.setAttribute("d", d);
+  return path.getTotalLength();
+}
+
+function buildPathSegment(d: string, startLen: number, endLen: number): string {
+  if (typeof document === "undefined" || endLen <= startLen) return "";
+  const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+  path.setAttribute("d", d);
+  const total = path.getTotalLength();
+  const start = clamp(startLen, 0, total);
+  const end = clamp(endLen, 0, total);
+  if (end <= start) return "";
+
+  const parts: string[] = [];
+  const step = Math.max(4, (end - start) / 28);
+  for (let len = start; len <= end; len += step) {
+    const pt = path.getPointAtLength(len);
+    parts.push(`${parts.length === 0 ? "M" : "L"} ${pt.x} ${pt.y}`);
+  }
+  const endPt = path.getPointAtLength(end);
+  parts.push(`L ${endPt.x} ${endPt.y}`);
+  return parts.join(" ");
+}
+
 function roadLabelStartOffset(road: PreparedRoad): string {
+  if (ROAD_LABEL_OFFSETS[road.plot.id]) {
+    return ROAD_LABEL_OFFSETS[road.plot.id];
+  }
   const width = road.box.maxX - road.box.minX;
   const height = road.box.maxY - road.box.minY;
   if (height > width * 2.4 && /^Lane /i.test(road.label)) {
     const laneNumber = Number(road.label.replace(/\D/g, ""));
     return laneNumber % 2 === 0 ? "82%" : "18%";
   }
+  if (road.plot.id === "road-entrance_road") {
+    return "25%"; 
+  }
   return "50%";
+}
+
+function roadLabelOffsetFraction(road: PreparedRoad): number {
+  const offset = roadLabelStartOffset(road);
+  const match = offset.match(/^([\d.]+)%$/);
+  return match ? Number(match[1]) / 100 : 0.5;
 }
 
 function roadLabelFontSize(road: PreparedRoad): number {
   const width = road.box.maxX - road.box.minX;
   const height = road.box.maxY - road.box.minY;
+  const shortSide = Math.min(width, height);
   if (height > width * 2.4) {
-    return 12;
+    return clamp(shortSide * 0.18, 26, 34);
   }
-  return road.label.length > 14 ? 13 : 16;
+  return clamp(shortSide * 0.14, 28, 38);
+}
+
+function roadLabelStrokeWidth(road: PreparedRoad): number {
+  return Math.max(5, roadLabelFontSize(road) * 0.22);
+}
+
+function computeRoadLabelGap(road: PreparedRoad, pathLength: number): {
+  start: number;
+  end: number;
+} {
+  if (pathLength <= 0) {
+    return { start: 0, end: 0 };
+  }
+  const fontSize = roadLabelFontSize(road);
+  const span = fontSize * 0.55 * road.label.length + fontSize * 0.35;
+  const center = pathLength * roadLabelOffsetFraction(road);
+  return {
+    start: Math.max(0, center - span / 2),
+    end: Math.min(pathLength, center + span / 2),
+  };
+}
+
+function enrichPreparedRoad(road: Omit<PreparedRoad, "pathLength" | "labelGapStart" | "labelGapEnd">): PreparedRoad {
+  const pathLength = measurePathLength(road.centerPath);
+  const gap = computeRoadLabelGap(road as PreparedRoad, pathLength);
+  return {
+    ...road,
+    pathLength,
+    labelGapStart: gap.start,
+    labelGapEnd: gap.end,
+  };
 }
 
 function displayRoadPoints(plot: Plot, points: [number, number][]): [number, number][] {
@@ -438,10 +560,12 @@ function computeFullViewBounds(
     extraPoints.push(...road.centerPoints);
     if (road.centerPoints.length === 0) continue;
     const midpoint = road.centerPoints[Math.floor(road.centerPoints.length / 2)];
-    const labelWidth = road.label.length * 7.5;
+    const fontSize = roadLabelFontSize(road);
+    const labelWidth = road.label.length * fontSize * 0.55;
+    const labelHeight = fontSize * 1.2;
     extraPoints.push(
-      [midpoint[0] - labelWidth / 2, midpoint[1] - 18],
-      [midpoint[0] + labelWidth / 2, midpoint[1] + 18],
+      [midpoint[0] - labelWidth / 2, midpoint[1] - labelHeight / 2],
+      [midpoint[0] + labelWidth / 2, midpoint[1] + labelHeight / 2],
     );
   }
 
@@ -528,8 +652,8 @@ function LandmarkDecorations({ preparedLandmarks }: { preparedLandmarks: Prepare
         if (id === "ClubHouse" || id === "clubhouse") {
           return (
             <g key={`clubhouse-${id}`} transform={`translate(${cx} ${cy})`}>
-              <Waves x={-22} y={-34} width={44} height={44} color="#7c2d12" strokeWidth={2.25} />
-              <text x={0} y={26} fill="#7c2d12" fontSize={15} fontWeight={700} textAnchor="middle">
+              <Waves x={-28} y={-40} width={56} height={56} color="#7c2d12" strokeWidth={2.25} />
+              <text x={0} y={32} fill="#7c2d12" fontSize={24} fontWeight={700} textAnchor="middle">
                 Clubhouse
               </text>
             </g>
@@ -538,8 +662,22 @@ function LandmarkDecorations({ preparedLandmarks }: { preparedLandmarks: Prepare
         if (id === "amenity-area") {
           return (
             <g key="amenity-label" transform={`translate(${cx} ${cy})`}>
-              <Building2 x={-24} y={-42} width={48} height={48} color="#1e3a8a" strokeWidth={2.25} />
-              <text x={0} y={28} fill="#1e3a8a" fontSize={17} fontWeight={700} textAnchor="middle">
+              <Building2 x={-30} y={-48} width={60} height={60} color="#b45309" strokeWidth={2.25} />
+              <text
+                x={0}
+                y={34}
+                fill="#f8fafc"
+                fontSize={32}
+                fontWeight={800}
+                textAnchor="middle"
+                style={{
+                  paintOrder: "stroke fill",
+                  stroke: "rgba(17,24,39,0.85)",
+                  strokeWidth: 7,
+                  strokeLinejoin: "round",
+                  textRendering: "geometricPrecision",
+                }}
+              >
                 Amenity
               </text>
             </g>
@@ -548,8 +686,8 @@ function LandmarkDecorations({ preparedLandmarks }: { preparedLandmarks: Prepare
         if (id === "PlayArea") {
           return (
             <g key="play-label" transform={`translate(${cx} ${cy})`}>
-              <Baby x={-22} y={-34} width={44} height={44} color="#581c87" strokeWidth={2.25} />
-              <text x={0} y={26} fill="#581c87" fontSize={15} fontWeight={700} textAnchor="middle">
+              <Baby x={-26} y={-40} width={52} height={52} color="#581c87" strokeWidth={2.25} />
+              <text x={0} y={32} fill="#581c87" fontSize={24} fontWeight={700} textAnchor="middle">
                 Play
               </text>
             </g>
@@ -562,7 +700,7 @@ function LandmarkDecorations({ preparedLandmarks }: { preparedLandmarks: Prepare
                 x={cx}
                 y={cy}
                 fill="#166534"
-                fontSize={18}
+                fontSize={26}
                 fontWeight={700}
                 textAnchor="middle"
                 opacity="0.9"
@@ -579,7 +717,7 @@ function LandmarkDecorations({ preparedLandmarks }: { preparedLandmarks: Prepare
                 x={cx}
                 y={cy}
                 fill="#0f766e"
-                fontSize={16}
+                fontSize={24}
                 fontWeight={700}
                 textAnchor="middle"
                 opacity="0.82"
@@ -612,11 +750,11 @@ const ZoomControls = memo(function ZoomControls({
   resetTransform: () => void;
 }) {
   return (
-    <div className="absolute bottom-3 right-3 z-20 flex items-center gap-2 rounded-2xl border border-white/70 bg-white/90 p-2 shadow-xl backdrop-blur">
+    <div className="absolute bottom-3 right-3 z-30 flex items-center gap-2 rounded-2xl border border-white/10 bg-[#111827]/88 p-2 shadow-2xl backdrop-blur">
       <button
         type="button"
         onClick={() => zoomOut(0.3)}
-        className="flex h-10 w-10 items-center justify-center rounded-xl border border-neutral-200 bg-white text-xl font-semibold text-neutral-700 transition hover:bg-neutral-50"
+        className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-xl font-semibold text-white/90 transition hover:bg-white/10"
         aria-label="Zoom out"
       >
         -
@@ -624,18 +762,47 @@ const ZoomControls = memo(function ZoomControls({
       <button
         type="button"
         onClick={resetTransform}
-        className="rounded-xl border border-neutral-200 bg-white px-3 py-2 text-xs font-semibold uppercase tracking-[0.14em] text-neutral-700 transition hover:bg-neutral-50"
+        className="rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-xs font-semibold uppercase tracking-[0.14em] text-white/90 transition hover:bg-white/10"
       >
         Reset View
       </button>
       <button
         type="button"
         onClick={() => zoomIn(0.3)}
-        className="flex h-10 w-10 items-center justify-center rounded-xl border border-neutral-200 bg-white text-xl font-semibold text-neutral-700 transition hover:bg-neutral-50"
+        className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-xl font-semibold text-white/90 transition hover:bg-white/10"
         aria-label="Zoom in"
       >
         +
       </button>
+    </div>
+  );
+});
+
+const MapStatusBar = memo(function MapStatusBar() {
+  const items = [
+    { label: "Sold", fill: "#f87171", stroke: "#ef4444" },
+    { label: "Unsold", fill: "#86efac", stroke: "#16a34a" },
+    { label: "Under Development", fill: "#93c5fd", stroke: "#2563eb" },
+  ] as const;
+
+  return (
+    <div
+      className="pointer-events-none absolute bottom-5 left-[54%] z-30 -translate-x-1/2"
+      aria-label="Plot status legend"
+    >
+      <div className="flex flex-wrap items-center justify-center gap-3 rounded-2xl border border-white/15 bg-[#111827]/88 px-4 py-2.5 shadow-2xl backdrop-blur sm:gap-5 sm:px-5">
+        {items.map((item) => (
+          <div key={item.label} className="flex items-center gap-2">
+            <span
+              className="h-3.5 w-3.5 shrink-0 rounded-sm border"
+              style={{ backgroundColor: item.fill, borderColor: item.stroke }}
+            />
+            <span className="text-xs font-semibold tracking-wide text-white/90 sm:text-sm">
+              {item.label}
+            </span>
+          </div>
+        ))}
+      </div>
     </div>
   );
 });
@@ -726,15 +893,17 @@ export default function PlotMap({
         const displayPoints = displayRoadPoints(plot, points);
         const displayBox = boxFromPoints(plot.id, displayPoints);
         const centerPoints = roadCenterLine(displayPoints);
-        roadShapes.push({
-          plot,
-          points: displayPoints,
-          pointsString: displayPoints.map(([x, y]) => `${x},${y}`).join(" "),
-          centerPoints,
-          centerPath: polylineToPath(centerPoints),
-          label: formatRoadLabel(plot.id),
-          box: displayBox,
-        });
+        roadShapes.push(
+          enrichPreparedRoad({
+            plot,
+            points: displayPoints,
+            pointsString: displayPoints.map(([x, y]) => `${x},${y}`).join(" "),
+            centerPoints,
+            centerPath: polylineToPath(centerPoints),
+            label: formatRoadLabel(plot.id),
+            box: displayBox,
+          }),
+        );
         continue;
       }
 
@@ -901,20 +1070,6 @@ export default function PlotMap({
     return () => window.clearTimeout(timeout);
   }, [enableZoom, searchedPlot]);
 
-  useEffect(() => {
-    if (!enableZoom) {
-      console.log("[PlotMap] viewBox", {
-        viewX: activeViewBox.viewX,
-        viewY: activeViewBox.viewY,
-        viewW: activeViewBox.viewW,
-        viewH: activeViewBox.viewH,
-        viewBox: `${activeViewBox.viewX} ${activeViewBox.viewY} ${activeViewBox.viewW} ${activeViewBox.viewH}`,
-        contentBounds: { viewX, viewY, viewW, viewH },
-        fullBounds,
-      });
-    }
-  }, [activeViewBox, enableZoom, fullBounds, viewH, viewW, viewX, viewY]);
-
   const handleHover = useCallback((id: string) => setHoveredId(id), []);
   const handleLeave = useCallback(
     (id: string) =>
@@ -935,6 +1090,7 @@ export default function PlotMap({
       viewBox={`${activeViewBox.viewX} ${activeViewBox.viewY} ${activeViewBox.viewW} ${activeViewBox.viewH}`}
       width="100%"
       height="100%"
+      style={{ overflow: "visible" }} 
       preserveAspectRatio="xMidYMid meet"
       xmlns="http://www.w3.org/2000/svg"
       role="img"
@@ -1049,16 +1205,20 @@ export default function PlotMap({
           <stop offset="100%" stopColor="#bbf7d0" />
         </linearGradient>
         <linearGradient id="fill-sold" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stopColor="#fff1f2" />
-          <stop offset="100%" stopColor="#fecaca" />
+          <stop offset="0%" stopColor="#fecaca" />
+          <stop offset="100%" stopColor="#f87171" />
         </linearGradient>
         <linearGradient id="fill-under-development" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stopColor="#dbeafe" />
+          <stop offset="100%" stopColor="#bfdbfe" />
+        </linearGradient>
+        <linearGradient id="fill-landmark-default" x1="0" y1="0" x2="0" y2="1">
           <stop offset="0%" stopColor="#ffffff" />
           <stop offset="100%" stopColor="#e5e7eb" />
         </linearGradient>
         <linearGradient id="fill-amenity-area" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stopColor="#bfdbfe" />
-          <stop offset="100%" stopColor="#93c5fd" />
+          <stop offset="0%" stopColor="#fef3c7" />
+          <stop offset="100%" stopColor="#fbbf24" />
         </linearGradient>
         <linearGradient id="fill-PlayArea" x1="0" y1="0" x2="0" y2="1">
           <stop offset="0%" stopColor="#ddd6fe" />
@@ -1101,17 +1261,17 @@ export default function PlotMap({
       </defs>
 
       <rect
-        x={activeViewBox.viewX}
-        y={activeViewBox.viewY}
-        width={activeViewBox.viewW}
-        height={activeViewBox.viewH}
-        fill="url(#grass-base)"
+         x={activeViewBox.viewX - 5000}
+         y={activeViewBox.viewY - 5000}
+         width={activeViewBox.viewW + 10000}
+         height={activeViewBox.viewH + 10000}
+         fill="url(#grass-base)"
       />
       <rect
-        x={activeViewBox.viewX}
-        y={activeViewBox.viewY}
-        width={activeViewBox.viewW}
-        height={activeViewBox.viewH}
+        x={activeViewBox.viewX - 5000}
+        y={activeViewBox.viewY - 5000}
+        width={activeViewBox.viewW + 10000}
+        height={activeViewBox.viewH + 10000}
         fill={backgroundImageUrl ? "url(#grass-image-pattern)" : "url(#grass-blades)"}
         filter={backgroundImageUrl ? undefined : "url(#grass-noise)"}
         opacity={backgroundImageUrl ? 0.88 : 0.82}
@@ -1145,23 +1305,37 @@ export default function PlotMap({
             />
           ))}
         </g>
+        <g stroke="#4b5563" strokeWidth={9} strokeLinecap="round" fill="none">
+          {preparedRoads.map((road) => {
+            if (road.labelGapEnd <= road.labelGapStart) return null;
+            const segment = buildPathSegment(
+              road.centerPath,
+              road.labelGapStart,
+              road.labelGapEnd,
+            );
+            if (!segment) return null;
+            return <path key={`lane-gap-${road.plot.id}`} d={segment} />;
+          })}
+        </g>
         <g id="road-label-guides" opacity="0">
           {preparedRoads.map((road) => (
             <path key={`guide-${road.plot.id}`} id={`road-label-${road.plot.id}`} d={road.centerPath} fill="none" />
           ))}
         </g>
         <g id="road-labels" fontFamily="system-ui, sans-serif" pointerEvents="none">
-          {preparedRoads.map((road) => (
+          {preparedRoads.map((road) => {
+            const fontSize = roadLabelFontSize(road);
+            return (
             <text
               key={`road-name-${road.plot.id}`}
               fill="#f8fafc"
-              fontSize={roadLabelFontSize(road)}
+              fontSize={fontSize}
               fontWeight={800}
-              letterSpacing="0.02em"
+              letterSpacing={road.plot.id === "road-entrance_road" ? "0.15em" : "0.02em"}
               style={{
                 paintOrder: "stroke fill",
-                stroke: "rgba(17,24,39,0.85)",
-                strokeWidth: 4,
+                stroke: "rgba(23, 32, 53, 0.85)",
+                strokeWidth: roadLabelStrokeWidth(road),
                 strokeLinejoin: "round",
                 textRendering: "geometricPrecision",
               }}
@@ -1170,11 +1344,13 @@ export default function PlotMap({
                 href={`#road-label-${road.plot.id}`}
                 startOffset={roadLabelStartOffset(road)}
                 textAnchor="middle"
+                dy={ROAD_LABEL_Y_OFFSETS[road.plot.id] || 0}
               >
                 {road.label}
               </textPath>
             </text>
-          ))}
+            );
+          })}
         </g>
       </g>
 
@@ -1238,7 +1414,7 @@ export default function PlotMap({
 
   return (
     <div
-      className={`relative h-full w-full overflow-hidden transition-opacity duration-500 ${
+      className={`relative h-full w-full overflow-hidden pb-14 transition-opacity duration-500 ${
         enableZoom ? "bg-neutral-300" : "bg-[#96c97d]"
       } ${loaded ? "opacity-100" : "opacity-0"}`}
     >
@@ -1253,6 +1429,8 @@ export default function PlotMap({
           50% { stroke-width: 4.4px; filter: brightness(1.12); }
         }
       `}</style>
+      <MapBrandBadge />
+      <MapStatusBar />
       {showFilters && (
         <FilterPanel
           searchValue={searchValue}
@@ -1310,6 +1488,12 @@ export default function PlotMap({
                 x
               </button>
             </div>
+            <div className="flex items-center gap-2">
+              <div className="h-3 w-3 rounded-full bg-blue-500 shadow-sm" />
+              <span className="text-sm font-medium text-neutral-800">
+                Under Development
+              </span>
+            </div>
             <LegendPanel />
           </div>
         </>
@@ -1327,7 +1511,7 @@ export default function PlotMap({
       >
         {enableZoom ? (
           <TransformWrapper
-            initialScale={1}
+            initialScale={1.3}
             minScale={0.85}
             maxScale={4.5}
             limitToBounds={false}

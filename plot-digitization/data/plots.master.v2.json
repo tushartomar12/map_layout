@@ -245,7 +245,7 @@
       ],
       [
         2736.363,
-        749.0
+        749
       ],
       [
         2736.607,
@@ -460,7 +460,7 @@
         919.964
       ],
       [
-        3203.0,
+        3203,
         918.306
       ],
       [
@@ -627,7 +627,7 @@
       ],
       [
         2716.84,
-        490.0
+        490
       ],
       [
         2705.13,
@@ -754,14 +754,19 @@
         501.462
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      12.03,
+      17.5,
+      12.03,
+      17.5
+    ],
+    "areaSqM": 210.47,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "phase-2",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "106",
@@ -904,14 +909,19 @@
         580.497
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      12.5,
+      17.5,
+      12.5,
+      17.5
+    ],
+    "areaSqM": 218.73,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "phase-2",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "105",
@@ -1050,14 +1060,19 @@
         663.685
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      12.5,
+      17.5,
+      12.5,
+      17.5
+    ],
+    "areaSqM": 218.73,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "phase-2",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "104",
@@ -1196,14 +1211,19 @@
         746.203
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      12.5,
+      17.5,
+      12.5,
+      17.5
+    ],
+    "areaSqM": 218.73,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "phase-2",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "103",
@@ -1368,15 +1388,15 @@
     ],
     "dataComplete": true,
     "edgeLengths": [
-      15.0,
-      19.83,
-      15.0,
-      19.83
+      17,
+      17.5,
+      17,
+      17.5
     ],
-    "areaSqM": 297.5,
+    "areaSqM": 297.47,
     "zone": "Central Residency",
     "typeOfDevelopment": "Residential Detached",
-    "status": "available",
+    "status": "phase-2",
     "price": null,
     "sellable": true
   },
@@ -1505,14 +1525,19 @@
         504.168
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      11.99,
+      15.5,
+      11.99,
+      15.5
+    ],
+    "areaSqM": 183.15,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "phase-2",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "109",
@@ -1643,14 +1668,19 @@
         584.573
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      12.5,
+      15.5,
+      12.5,
+      15.5
+    ],
+    "areaSqM": 193.73,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "phase-2",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "110",
@@ -1781,14 +1811,19 @@
         665.6
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      12.5,
+      15.5,
+      12.5,
+      15.5
+    ],
+    "areaSqM": 193.73,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "phase-2",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "111",
@@ -1919,14 +1954,19 @@
         747.135
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      12.5,
+      15.5,
+      12.5,
+      15.5
+    ],
+    "areaSqM": 193.73,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "phase-2",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "112",
@@ -2077,14 +2117,19 @@
         829.71
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      17,
+      15.5,
+      17,
+      15.5
+    ],
+    "areaSqM": 263.48,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "phase-2",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "113",
@@ -2235,14 +2280,19 @@
         921.055
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      17,
+      15.5,
+      17,
+      15.5
+    ],
+    "areaSqM": 263.48,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "phase-2",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "114",
@@ -2373,14 +2423,19 @@
         750.932
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      12.5,
+      15.5,
+      12.5,
+      15.5
+    ],
+    "areaSqM": 193.73,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "phase-2",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "115",
@@ -2511,14 +2566,19 @@
         668.894
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      12.5,
+      15.5,
+      12.5,
+      15.5
+    ],
+    "areaSqM": 193.73,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "phase-2",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "116",
@@ -2649,14 +2709,19 @@
         585.12
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      12.5,
+      15.5,
+      12.5,
+      15.5
+    ],
+    "areaSqM": 193.73,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "phase-2",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "117",
@@ -2783,14 +2848,19 @@
         508.486
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      11.64,
+      15.5,
+      11.18,
+      15.5
+    ],
+    "areaSqM": 176.89,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "phase-2",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "118",
@@ -2917,14 +2987,19 @@
         515.968
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      11.01,
+      15.5,
+      10.55,
+      15.5
+    ],
+    "areaSqM": 167.01,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "sold",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "119",
@@ -3059,14 +3134,19 @@
         589.496
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      12.5,
+      15.5,
+      12.5,
+      15.5
+    ],
+    "areaSqM": 193.73,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "available",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "120",
@@ -3197,14 +3277,19 @@
         670.64
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      12.5,
+      15.5,
+      12.5,
+      15.5
+    ],
+    "areaSqM": 193.73,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "available",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "121",
@@ -3268,7 +3353,7 @@
       ],
       [
         2230.55,
-        808.0
+        808
       ],
       [
         2230.55,
@@ -3335,14 +3420,19 @@
         752.735
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      12.5,
+      15.5,
+      12.5,
+      15.5
+    ],
+    "areaSqM": 193.73,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "available",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "122",
@@ -3495,15 +3585,15 @@
     ],
     "dataComplete": true,
     "edgeLengths": [
-      15.0,
-      17.57,
-      15.0,
-      17.57
+      17,
+      15.5,
+      17,
+      15.5
     ],
-    "areaSqM": 263.5,
+    "areaSqM": 263.48,
     "zone": "Central Residency",
     "typeOfDevelopment": "Residential Detached",
-    "status": "available",
+    "status": "sold",
     "price": null,
     "sellable": true
   },
@@ -3656,14 +3746,19 @@
         838.677
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      17,
+      15.5,
+      17,
+      15.5
+    ],
+    "areaSqM": 263.48,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "sold",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "124",
@@ -3794,14 +3889,19 @@
         756.703
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      12.5,
+      15.5,
+      12.5,
+      15.5
+    ],
+    "areaSqM": 193.73,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "available",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "125",
@@ -3932,14 +4032,19 @@
         672.695
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      12.5,
+      15.5,
+      12.5,
+      15.5
+    ],
+    "areaSqM": 193.73,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "available",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "126",
@@ -4070,14 +4175,19 @@
         590.553
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      12.5,
+      15.5,
+      12.5,
+      15.5
+    ],
+    "areaSqM": 193.73,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "available",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "127",
@@ -4200,14 +4310,19 @@
         520.906
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      10.55,
+      15.5,
+      10.3,
+      15.5
+    ],
+    "areaSqM": 160.36,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "sold",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "128",
@@ -4282,7 +4397,7 @@
         582.205
       ],
       [
-        2009.0,
+        2009,
         581.802
       ],
       [
@@ -4330,14 +4445,19 @@
         524.923
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      10.42,
+      15.5,
+      10.73,
+      15.5
+    ],
+    "areaSqM": 160.89,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "sold",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "129",
@@ -4468,14 +4588,19 @@
         592.605
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      12.5,
+      15.5,
+      12.5,
+      15.5
+    ],
+    "areaSqM": 193.73,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "available",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "130",
@@ -4606,14 +4731,19 @@
         675.686
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      12.5,
+      15.5,
+      12.5,
+      15.5
+    ],
+    "areaSqM": 193.73,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "available",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "131",
@@ -4653,7 +4783,7 @@
       ],
       [
         1993.616,
-        749.0
+        749
       ],
       [
         1985.05,
@@ -4744,14 +4874,19 @@
         758.058
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      12.5,
+      15.5,
+      12.5,
+      15.5
+    ],
+    "areaSqM": 193.73,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "available",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "132",
@@ -4902,14 +5037,19 @@
         839.681
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      17,
+      15.5,
+      17,
+      15.5
+    ],
+    "areaSqM": 263.48,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "sold",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "133",
@@ -5060,14 +5200,19 @@
         842.109
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      17,
+      15.5,
+      17,
+      15.5
+    ],
+    "areaSqM": 263.48,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "sold",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "134",
@@ -5198,14 +5343,19 @@
         758.639
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      12.5,
+      15.5,
+      12.5,
+      15.5
+    ],
+    "areaSqM": 193.73,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "available",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "135",
@@ -5336,14 +5486,19 @@
         677.102
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      12.5,
+      15.5,
+      12.5,
+      15.5
+    ],
+    "areaSqM": 193.73,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "available",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "136",
@@ -5474,14 +5629,19 @@
         595.62
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      12.5,
+      15.5,
+      12.5,
+      15.5
+    ],
+    "areaSqM": 193.73,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "available",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "137",
@@ -5604,14 +5764,19 @@
         582.749
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      10.73,
+      15.5,
+      11.04,
+      15.5
+    ],
+    "areaSqM": 168.69,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "sold",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "138",
@@ -5738,14 +5903,19 @@
         523.067
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      11.16,
+      15.5,
+      11.08,
+      15.5
+    ],
+    "areaSqM": 174.43,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "sold",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "139",
@@ -5876,14 +6046,19 @@
         597.652
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      12.5,
+      15.5,
+      12.5,
+      15.5
+    ],
+    "areaSqM": 193.73,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "available",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "140",
@@ -6014,14 +6189,19 @@
         679.669
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      12.5,
+      15.5,
+      12.5,
+      15.5
+    ],
+    "areaSqM": 193.73,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "available",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "141",
@@ -6156,14 +6336,19 @@
         760.405
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      12.5,
+      15.5,
+      12.5,
+      15.5
+    ],
+    "areaSqM": 193.73,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "sold",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "142",
@@ -6314,14 +6499,19 @@
         844.737
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      17,
+      15.5,
+      17,
+      15.5
+    ],
+    "areaSqM": 263.48,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "sold",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "143",
@@ -6476,14 +6666,19 @@
         844.926
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      17,
+      15.5,
+      17,
+      15.5
+    ],
+    "areaSqM": 263.48,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "sold",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "144",
@@ -6614,14 +6809,19 @@
         820.799
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      12.5,
+      15.5,
+      12.5,
+      15.5
+    ],
+    "areaSqM": 193.73,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "available",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "145",
@@ -6752,14 +6952,19 @@
         680.096
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      12.5,
+      15.5,
+      12.5,
+      15.5
+    ],
+    "areaSqM": 193.73,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "available",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "146",
@@ -6890,14 +7095,19 @@
         600.492
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      12.5,
+      15.5,
+      12.5,
+      15.5
+    ],
+    "areaSqM": 193.73,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "available",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "147",
@@ -7016,14 +7226,19 @@
         516.514
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      11.08,
+      15.5,
+      8.92,
+      15.5
+    ],
+    "areaSqM": 163.87,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "sold",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "148",
@@ -7170,14 +7385,19 @@
         558.746
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      18.9,
+      15.5,
+      12.38,
+      15.5
+    ],
+    "areaSqM": 242.42,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "sold",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "149",
@@ -7308,14 +7528,19 @@
         683.927
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      12.5,
+      15.5,
+      12.5,
+      15.5
+    ],
+    "areaSqM": 193.73,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "available",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "150",
@@ -7450,14 +7675,19 @@
         765.389
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      12.5,
+      15.5,
+      12.5,
+      15.5
+    ],
+    "areaSqM": 193.73,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "available",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "151",
@@ -7608,14 +7838,19 @@
         849.167
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      17,
+      15.5,
+      17,
+      15.5
+    ],
+    "areaSqM": 263.48,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "sold",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "152",
@@ -7766,14 +8001,19 @@
         851.111
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      17,
+      15.5,
+      17,
+      15.5
+    ],
+    "areaSqM": 263.48,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "sold",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "153",
@@ -7908,14 +8148,19 @@
         765.923
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      12.5,
+      15.5,
+      12.5,
+      15.5
+    ],
+    "areaSqM": 193.73,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "available",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "154",
@@ -8092,15 +8337,15 @@
     ],
     "dataComplete": true,
     "edgeLengths": [
-      19.2,
-      17.3,
-      21.6,
-      17.3
+      24.88,
+      15.5,
+      18.36,
+      15.5
     ],
-    "areaSqM": 353.14,
+    "areaSqM": 335.11,
     "zone": "Central Residency",
     "typeOfDevelopment": "Residential Detached",
-    "status": "available",
+    "status": "sold",
     "price": null,
     "sellable": true
   },
@@ -8326,7 +8571,7 @@
       ],
       [
         1229.654,
-        319.0
+        319
       ],
       [
         1217.912,
@@ -8559,14 +8804,19 @@
         524.226
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      12.69,
+      15.5,
+      25,
+      15.5
+    ],
+    "areaSqM": 387.47,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "sold",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "156",
@@ -8701,14 +8951,19 @@
         688.969
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      12.5,
+      15.5,
+      12.5,
+      15.5
+    ],
+    "areaSqM": 193.73,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "sold",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "157",
@@ -8839,14 +9094,19 @@
         772.108
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      12.5,
+      15.5,
+      12.5,
+      15.5
+    ],
+    "areaSqM": 193.73,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "available",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "158",
@@ -8997,14 +9257,19 @@
         853.625
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      17,
+      15.5,
+      17,
+      15.5
+    ],
+    "areaSqM": 263.48,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "sold",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "159",
@@ -9159,14 +9424,19 @@
         855.414
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      17,
+      15.5,
+      17,
+      15.5
+    ],
+    "areaSqM": 263.48,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "sold",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "160",
@@ -9297,14 +9567,19 @@
         771.13
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      12.5,
+      15.5,
+      12.5,
+      15.5
+    ],
+    "areaSqM": 193.73,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "available",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "161",
@@ -9435,14 +9710,19 @@
         689.045
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      12.5,
+      15.5,
+      12.5,
+      15.5
+    ],
+    "areaSqM": 193.73,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "available",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "162",
@@ -9573,14 +9853,19 @@
         608.961
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      12.5,
+      15.5,
+      12.5,
+      15.5
+    ],
+    "areaSqM": 193.73,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "available",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "163",
@@ -9711,14 +9996,19 @@
         524.573
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      12.5,
+      15.5,
+      12.5,
+      15.5
+    ],
+    "areaSqM": 193.73,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "available",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "164",
@@ -9915,15 +10205,15 @@
     ],
     "dataComplete": true,
     "edgeLengths": [
-      15.0,
-      20.16,
-      15.0,
-      20.16
+      13.44,
+      28.86,
+      13.44,
+      28.86
     ],
-    "areaSqM": 302.46,
+    "areaSqM": 392.63,
     "zone": "Central Residency",
     "typeOfDevelopment": "Residential Detached",
-    "status": "available",
+    "status": "sold",
     "price": null,
     "sellable": true
   },
@@ -10060,14 +10350,19 @@
         526.429
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      12.5,
+      15.5,
+      12.5,
+      15.5
+    ],
+    "areaSqM": 193.73,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "sold",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "166",
@@ -10198,14 +10493,19 @@
         609.171
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      12.5,
+      15.5,
+      12.5,
+      15.5
+    ],
+    "areaSqM": 193.73,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "sold",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "167",
@@ -10336,14 +10636,19 @@
         692.734
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      12.5,
+      15.5,
+      12.5,
+      15.5
+    ],
+    "areaSqM": 193.73,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "sold",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "168",
@@ -10474,14 +10779,19 @@
         776.651
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      12.5,
+      15.5,
+      12.5,
+      15.5
+    ],
+    "areaSqM": 193.73,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "available",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "169",
@@ -10632,14 +10942,19 @@
         858.137
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      17,
+      15.5,
+      17,
+      15.5
+    ],
+    "areaSqM": 263.48,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "sold",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "170",
@@ -10790,14 +11105,19 @@
         861.596
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      17,
+      15.5,
+      17,
+      15.5
+    ],
+    "areaSqM": 263.48,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "sold",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "171",
@@ -10928,14 +11248,19 @@
         776.219
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      12.5,
+      15.5,
+      12.5,
+      15.5
+    ],
+    "areaSqM": 193.73,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "sold",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "172",
@@ -11066,14 +11391,19 @@
         695.17
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      12.5,
+      15.5,
+      12.5,
+      15.5
+    ],
+    "areaSqM": 193.73,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "sold",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "173",
@@ -11204,14 +11534,19 @@
         612.124
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      12.5,
+      15.5,
+      12.5,
+      15.5
+    ],
+    "areaSqM": 193.73,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "sold",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "174",
@@ -11342,14 +11677,19 @@
         529.087
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      12.5,
+      15.5,
+      12.5,
+      15.5
+    ],
+    "areaSqM": 193.73,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "sold",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "ClubHouse",
@@ -11707,7 +12047,7 @@
       ],
       [
         795.019,
-        297.0
+        297
       ],
       [
         784.004,
@@ -12112,15 +12452,15 @@
     ],
     "dataComplete": true,
     "edgeLengths": [
-      28.0,
-      32.76,
-      28.0,
-      32.76
+      49.02,
+      56.5,
+      38.02,
+      42.1
     ],
-    "areaSqM": 917.18,
+    "areaSqM": 1916.01,
     "zone": "Central Residency",
     "typeOfDevelopment": "Residential Detached",
-    "status": "available",
+    "status": "sold",
     "price": null,
     "sellable": true
   },
@@ -12485,14 +12825,19 @@
         692.118
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      51.5,
+      33.94,
+      51.5,
+      21.99
+    ],
+    "areaSqM": 1484.07,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "sold",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "177",
@@ -12899,14 +13244,19 @@
         686.22
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      51.5,
+      39.12,
+      51.5,
+      39.12
+    ],
+    "areaSqM": 2014.64,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "sold",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "178",
@@ -13381,7 +13731,7 @@
         1286.872
       ],
       [
-        363.0,
+        363,
         1287.147
       ],
       [
@@ -13417,14 +13767,19 @@
         1204.589
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      39.72,
+      71.98,
+      41.41,
+      73.06
+    ],
+    "areaSqM": 3001.9,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "sold",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "179",
@@ -13907,14 +14262,19 @@
         1288.743
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      43.6,
+      53.4,
+      47.46,
+      71.98
+    ],
+    "areaSqM": 3590.1,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "sold",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "180",
@@ -14333,14 +14693,19 @@
         1662.425
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      40,
+      46.64,
+      40,
+      53.4
+    ],
+    "areaSqM": 2534.11,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "sold",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "181",
@@ -14743,14 +15108,19 @@
         1842.702
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      39,
+      55.46,
+      39.89,
+      46.64
+    ],
+    "areaSqM": 2026.46,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "sold",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "182",
@@ -15141,14 +15511,19 @@
         2148.607
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      35.48,
+      52.2,
+      52.5,
+      55.46
+    ],
+    "areaSqM": 1827.63,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "sold",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "1",
@@ -15447,14 +15822,19 @@
         1966.721
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      35.85,
+      null,
+      48.15,
+      23.08
+    ],
+    "areaSqM": 1091.65,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "sold",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "2",
@@ -15673,14 +16053,19 @@
         1812.671
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      23.92,
+      23.08,
+      24,
+      24.9
+    ],
+    "areaSqM": 633.36,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "sold",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "3",
@@ -15907,14 +16292,19 @@
         1652.082
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      23.55,
+      24.9,
+      23.52,
+      26.07
+    ],
+    "areaSqM": 680.22,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "sold",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "4",
@@ -16045,7 +16435,7 @@
         1644.265
       ],
       [
-        954.0,
+        954,
         1643.984
       ],
       [
@@ -16147,15 +16537,15 @@
     ],
     "dataComplete": true,
     "edgeLengths": [
-      15.0,
-      35.71,
-      15.02,
-      34.94
+      24.29,
+      26.07,
+      24.26,
+      27.28
     ],
-    "areaSqM": 530,
+    "areaSqM": 800.32,
     "zone": "Central Residency",
     "typeOfDevelopment": "Residential Detached",
-    "status": "available",
+    "status": "sold",
     "price": null,
     "sellable": true
   },
@@ -16288,14 +16678,19 @@
         1412.585
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      12.5,
+      15.5,
+      12.5,
+      15.5
+    ],
+    "areaSqM": 193.73,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "sold",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "6",
@@ -16426,14 +16821,19 @@
         1328.219
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      12.5,
+      15.5,
+      12.5,
+      15.5
+    ],
+    "areaSqM": 193.73,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "sold",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "7",
@@ -16564,14 +16964,19 @@
         1245.671
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      12.5,
+      15.5,
+      12.5,
+      15.5
+    ],
+    "areaSqM": 193.73,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "sold",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "8",
@@ -16702,14 +17107,19 @@
         1164.702
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      12.5,
+      15.5,
+      12.5,
+      15.5
+    ],
+    "areaSqM": 193.73,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "sold",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "9",
@@ -16860,14 +17270,19 @@
         1050.71
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      17,
+      15.5,
+      17,
+      15.5
+    ],
+    "areaSqM": 263.48,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "sold",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "10",
@@ -17018,14 +17433,19 @@
         1050.149
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      17,
+      15.5,
+      17,
+      15.5
+    ],
+    "areaSqM": 263.48,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "sold",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "11",
@@ -17156,14 +17576,19 @@
         1160.64
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      12.5,
+      15.5,
+      12.5,
+      15.5
+    ],
+    "areaSqM": 193.73,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "sold",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "12",
@@ -17294,14 +17719,19 @@
         1245.098
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      12.5,
+      15.5,
+      12.5,
+      15.5
+    ],
+    "areaSqM": 193.73,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "sold",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "13",
@@ -17436,14 +17866,19 @@
         1325.063
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      12.5,
+      15.5,
+      12.5,
+      15.5
+    ],
+    "areaSqM": 193.73,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "sold",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "14",
@@ -17578,14 +18013,19 @@
         1416.025
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      5.57,
+      11.78,
+      12.5,
+      null
+    ],
+    "areaSqM": 193.73,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "sold",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "15",
@@ -17754,15 +18194,15 @@
     ],
     "dataComplete": true,
     "edgeLengths": [
-      15.0,
-      20.92,
-      15.0,
-      20.92
+      20.79,
+      15.5,
+      19.97,
+      15.5
     ],
-    "areaSqM": 313.8,
+    "areaSqM": 313.77,
     "zone": "Central Residency",
     "typeOfDevelopment": "Residential Detached",
-    "status": "available",
+    "status": "sold",
     "price": null,
     "sellable": true
   },
@@ -17899,14 +18339,19 @@
         1299.49
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      12.5,
+      15.5,
+      12.5,
+      15.5
+    ],
+    "areaSqM": 193.73,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "sold",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "17",
@@ -18037,14 +18482,19 @@
         1159.75
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      12.5,
+      15.5,
+      12.5,
+      15.5
+    ],
+    "areaSqM": 193.73,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "sold",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "18",
@@ -18195,14 +18645,19 @@
         1048.639
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      17,
+      15.5,
+      17,
+      15.5
+    ],
+    "areaSqM": 263.48,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "sold",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "19",
@@ -18357,14 +18812,19 @@
         1042.939
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      17,
+      15.5,
+      17,
+      15.5
+    ],
+    "areaSqM": 263.48,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "sold",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "20",
@@ -18495,14 +18955,19 @@
         1160.059
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      12.5,
+      15.5,
+      12.5,
+      15.5
+    ],
+    "areaSqM": 193.73,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "sold",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "21",
@@ -18633,14 +19098,19 @@
         1239.223
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      12.5,
+      15.5,
+      12.5,
+      15.5
+    ],
+    "areaSqM": 193.73,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "available",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "22",
@@ -18787,14 +19257,19 @@
         1327.419
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      9.65,
+      null,
+      null,
+      15.5
+    ],
+    "areaSqM": 182.12,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "sold",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "23",
@@ -18913,14 +19388,19 @@
         1322.607
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      10.5,
+      null,
+      9.89,
+      15.5
+    ],
+    "areaSqM": 157.86,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "sold",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "24",
@@ -19055,14 +19535,19 @@
         1236.472
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      12.5,
+      15.5,
+      12.5,
+      15.5
+    ],
+    "areaSqM": 193.73,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "available",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "25",
@@ -19193,14 +19678,19 @@
         1155.189
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      12.5,
+      15.5,
+      12.5,
+      15.5
+    ],
+    "areaSqM": 193.73,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "available",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "26",
@@ -19351,14 +19841,19 @@
         1043.614
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      17,
+      15.5,
+      17,
+      15.5
+    ],
+    "areaSqM": 263.48,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "sold",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "27",
@@ -19509,14 +20004,19 @@
         1042.151
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      17,
+      15.5,
+      17,
+      15.5
+    ],
+    "areaSqM": 263.48,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "sold",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "28",
@@ -19651,14 +20151,19 @@
         1152.877
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      12.5,
+      15.5,
+      12.5,
+      15.5
+    ],
+    "areaSqM": 193.73,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "available",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "29",
@@ -19793,14 +20298,19 @@
         1237.407
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      12.5,
+      15.5,
+      12.5,
+      15.5
+    ],
+    "areaSqM": 193.73,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "available",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "30",
@@ -19931,14 +20441,19 @@
         1318.967
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      12.37,
+      null,
+      null,
+      15.5
+    ],
+    "areaSqM": 173.32,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "sold",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "31",
@@ -20079,15 +20594,15 @@
     ],
     "dataComplete": true,
     "edgeLengths": [
-      15.0,
-      15.28,
-      15.0,
-      15.28
+      15.5,
+      15.5,
+      15.5,
+      15.5
     ],
-    "areaSqM": 229.17,
+    "areaSqM": 229.15,
     "zone": "Central Residency",
     "typeOfDevelopment": "Residential Detached",
-    "status": "available",
+    "status": "sold",
     "price": null,
     "sellable": true
   },
@@ -20220,14 +20735,19 @@
         1232.723
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      12.5,
+      15.5,
+      12.5,
+      15.5
+    ],
+    "areaSqM": 193.73,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "available",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "33",
@@ -20362,14 +20882,19 @@
         1150.548
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      12.5,
+      15.5,
+      12.5,
+      15.5
+    ],
+    "areaSqM": 193.73,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "available",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "34",
@@ -20413,7 +20938,7 @@
       ],
       [
         1644.05,
-        1031.0
+        1031
       ],
       [
         1644.05,
@@ -20485,7 +21010,7 @@
       ],
       [
         1748.05,
-        1135.0
+        1135
       ],
       [
         1748.05,
@@ -20520,14 +21045,19 @@
         1039.222
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      17,
+      15.5,
+      17,
+      15.5
+    ],
+    "areaSqM": 263.48,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "sold",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "35",
@@ -20678,14 +21208,19 @@
         1035.617
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      17,
+      15.5,
+      17,
+      15.5
+    ],
+    "areaSqM": 263.48,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "sold",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "36",
@@ -20809,7 +21344,7 @@
       ],
       [
         1853.225,
-        1170.0
+        1170
       ],
       [
         1853.5,
@@ -20820,14 +21355,19 @@
         1146.5
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      12.5,
+      15.5,
+      12.5,
+      15.5
+    ],
+    "areaSqM": 193.73,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "available",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "37",
@@ -20962,14 +21502,19 @@
         1233.029
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      12.5,
+      15.5,
+      12.5,
+      15.5
+    ],
+    "areaSqM": 193.73,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "available",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "38",
@@ -21124,14 +21669,19 @@
         1317.979
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      32.64,
+      15.5,
+      19.92,
+      15.5
+    ],
+    "areaSqM": 271.3,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "sold",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "39",
@@ -21304,15 +21854,15 @@
     ],
     "dataComplete": true,
     "edgeLengths": [
-      15.0,
-      20.59,
-      15.0,
-      20.59
+      12.5,
+      15.5,
+      12.5,
+      15.5
     ],
-    "areaSqM": 308.79,
+    "areaSqM": 329.75,
     "zone": "Central Residency",
     "typeOfDevelopment": "Residential Detached",
-    "status": "available",
+    "status": "sold",
     "price": null,
     "sellable": true
   },
@@ -21445,14 +21995,19 @@
         1228.683
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      12.5,
+      15.5,
+      12.5,
+      15.5
+    ],
+    "areaSqM": 193.73,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "available",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "41",
@@ -21587,14 +22142,19 @@
         1145.895
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      12.5,
+      15.5,
+      12.5,
+      15.5
+    ],
+    "areaSqM": 193.73,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "sold",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "42",
@@ -21749,14 +22309,19 @@
         1032.033
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      17,
+      15.5,
+      17,
+      15.5
+    ],
+    "areaSqM": 263.48,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "sold",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "43",
@@ -21909,15 +22474,15 @@
     ],
     "dataComplete": true,
     "edgeLengths": [
-      15.0,
-      17.57,
-      15.0,
-      17.57
+      17,
+      15.5,
+      17,
+      15.5
     ],
-    "areaSqM": 263.5,
+    "areaSqM": 263.48,
     "zone": "Central Residency",
     "typeOfDevelopment": "Residential Detached",
-    "status": "available",
+    "status": "sold",
     "price": null,
     "sellable": true
   },
@@ -22050,14 +22615,19 @@
         1145.219
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      12.5,
+      15.5,
+      12.5,
+      15.5
+    ],
+    "areaSqM": 193.73,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "available",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "45",
@@ -22188,14 +22758,19 @@
         1225.613
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      12.5,
+      15.5,
+      12.5,
+      15.5
+    ],
+    "areaSqM": 193.73,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "available",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "46",
@@ -22326,14 +22901,19 @@
         1308.996
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      12.5,
+      15.5,
+      12.5,
+      15.5
+    ],
+    "areaSqM": 193.73,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "available",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "47",
@@ -22460,14 +23040,19 @@
         1391.66
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      16.63,
+      15.5,
+      13.91,
+      15.5
+    ],
+    "areaSqM": 178.15,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "sold",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "48",
@@ -22610,14 +23195,19 @@
         1476.334
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      12.5,
+      15.5,
+      12.5,
+      15.5
+    ],
+    "areaSqM": 236.62,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "sold",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "49",
@@ -22748,14 +23338,19 @@
         1308.558
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      12.5,
+      15.5,
+      12.5,
+      15.5
+    ],
+    "areaSqM": 193.73,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "available",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "50",
@@ -22890,14 +23485,19 @@
         1223.94
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      12.5,
+      15.5,
+      12.5,
+      15.5
+    ],
+    "areaSqM": 193.73,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "available",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "51",
@@ -23028,14 +23628,19 @@
         1142.591
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      12.5,
+      15.5,
+      12.5,
+      15.5
+    ],
+    "areaSqM": 193.73,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "sold",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "52",
@@ -23087,7 +23692,7 @@
       ],
       [
         2132.344,
-        1044.0
+        1044
       ],
       [
         2132.705,
@@ -23190,14 +23795,19 @@
         1029.95
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      17,
+      15.5,
+      17,
+      15.5
+    ],
+    "areaSqM": 263.48,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "sold",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "53",
@@ -23352,14 +23962,19 @@
         1027.431
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      17,
+      15.5,
+      17,
+      15.5
+    ],
+    "areaSqM": 263.48,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "sold",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "54",
@@ -23494,14 +24109,19 @@
         1138.968
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      12.5,
+      15.5,
+      12.5,
+      15.5
+    ],
+    "areaSqM": 193.73,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "sold",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "55",
@@ -23632,14 +24252,19 @@
         1220.707
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      12.5,
+      15.5,
+      12.5,
+      15.5
+    ],
+    "areaSqM": 193.73,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "available",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "56",
@@ -23774,14 +24399,19 @@
         1301.633
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      12.5,
+      15.5,
+      12.5,
+      15.5
+    ],
+    "areaSqM": 193.73,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "available",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "57",
@@ -23938,15 +24568,15 @@
     ],
     "dataComplete": true,
     "edgeLengths": [
-      15.0,
-      18.59,
-      15.0,
-      18.59
+      8.82,
+      16.5,
+      7.41,
+      16.5
     ],
-    "areaSqM": 278.79,
+    "areaSqM": 278.76,
     "zone": "Central Residency",
     "typeOfDevelopment": "Residential Detached",
-    "status": "available",
+    "status": "sold",
     "price": null,
     "sellable": true
   },
@@ -24067,14 +24697,19 @@
         1507.622
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      12.5,
+      15.5,
+      12.5,
+      15.5
+    ],
+    "areaSqM": 154.19,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "phase-2",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "59",
@@ -24205,14 +24840,19 @@
         1387.058
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      12.5,
+      15.5,
+      12.5,
+      15.5
+    ],
+    "areaSqM": 193.73,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "phase-2",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "60",
@@ -24347,14 +24987,19 @@
         1303.408
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      12.5,
+      15.5,
+      12.5,
+      15.5
+    ],
+    "areaSqM": 193.73,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "phase-2",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "61",
@@ -24398,7 +25043,7 @@
       ],
       [
         2380.05,
-        1209.0
+        1209
       ],
       [
         2380.05,
@@ -24414,7 +25059,7 @@
       ],
       [
         2380.05,
-        1256.0
+        1256
       ],
       [
         2380.05,
@@ -24470,7 +25115,7 @@
       ],
       [
         2485.05,
-        1267.0
+        1267
       ],
       [
         2485.05,
@@ -24486,17 +25131,22 @@
       ],
       [
         2485.05,
-        1220.0
+        1220
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      12.5,
+      15.5,
+      12.5,
+      15.5
+    ],
+    "areaSqM": 193.73,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "phase-2",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "62",
@@ -24631,14 +25281,19 @@
         1135.498
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      12.5,
+      15.5,
+      12.5,
+      15.5
+    ],
+    "areaSqM": 193.73,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "phase-2",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "63",
@@ -24793,14 +25448,19 @@
         1022.564
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      17,
+      15.5,
+      17,
+      15.5
+    ],
+    "areaSqM": 263.48,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "phase-2",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "64",
@@ -24951,14 +25611,19 @@
         1024.113
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      17,
+      15.5,
+      17,
+      15.5
+    ],
+    "areaSqM": 263.48,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "phase-2",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "65",
@@ -25089,14 +25754,19 @@
         1135.223
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      12.5,
+      15.5,
+      12.5,
+      15.5
+    ],
+    "areaSqM": 193.73,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "phase-2",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "66",
@@ -25227,14 +25897,19 @@
         1218.043
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      12.5,
+      15.5,
+      12.5,
+      15.5
+    ],
+    "areaSqM": 193.73,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "phase-2",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "67",
@@ -25365,14 +26040,19 @@
         1300.733
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      12.5,
+      15.5,
+      12.5,
+      15.5
+    ],
+    "areaSqM": 193.73,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "phase-2",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "68",
@@ -25503,14 +26183,19 @@
         1383.686
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      12.5,
+      15.5,
+      12.5,
+      15.5
+    ],
+    "areaSqM": 193.73,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "phase-2",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "69",
@@ -25629,14 +26314,19 @@
         1464.377
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      15.69,
+      15.75,
+      12.49,
+      15.75
+    ],
+    "areaSqM": 174.93,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "phase-2",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "70",
@@ -25779,14 +26469,19 @@
         1461.43
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      12.5,
+      15.75,
+      12.5,
+      15.75
+    ],
+    "areaSqM": 248.37,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "phase-2",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "71",
@@ -25921,14 +26616,19 @@
         1379.986
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      12.5,
+      15.75,
+      12.5,
+      15.75
+    ],
+    "areaSqM": 193.73,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "phase-2",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "72",
@@ -26059,14 +26759,19 @@
         1299.198
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      12.5,
+      15.75,
+      12.5,
+      15.75
+    ],
+    "areaSqM": 193.73,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "phase-2",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "73",
@@ -26201,14 +26906,19 @@
         1214.895
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      12.5,
+      15.75,
+      12.5,
+      15.75
+    ],
+    "areaSqM": 193.73,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "phase-2",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "74",
@@ -26343,14 +27053,19 @@
         1131.079
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      12.5,
+      15.75,
+      12.5,
+      15.75
+    ],
+    "areaSqM": 193.73,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "phase-2",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "75",
@@ -26505,14 +27220,19 @@
         1019.98
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      17,
+      15.75,
+      17,
+      15.75
+    ],
+    "areaSqM": 263.48,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "phase-2",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "76",
@@ -26669,15 +27389,15 @@
     ],
     "dataComplete": true,
     "edgeLengths": [
-      15.0,
-      17.57,
-      15.0,
-      17.57
+      17,
+      15.75,
+      17,
+      15.75
     ],
-    "areaSqM": 263.5,
+    "areaSqM": 263.48,
     "zone": "Central Residency",
     "typeOfDevelopment": "Residential Detached",
-    "status": "available",
+    "status": "phase-2",
     "price": null,
     "sellable": true
   },
@@ -26814,14 +27534,19 @@
         1130.466
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      12.5,
+      15.75,
+      12.5,
+      15.75
+    ],
+    "areaSqM": 193.73,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "phase-2",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "78",
@@ -26956,14 +27681,19 @@
         1212.515
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      12.5,
+      15.75,
+      12.5,
+      15.75
+    ],
+    "areaSqM": 193.73,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "phase-2",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "79",
@@ -27098,14 +27828,19 @@
         1295.017
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      12.5,
+      15.75,
+      12.5,
+      15.75
+    ],
+    "areaSqM": 193.73,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "phase-2",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "80",
@@ -27240,14 +27975,19 @@
         1376.999
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      12.5,
+      15.75,
+      12.5,
+      15.75
+    ],
+    "areaSqM": 193.73,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "phase-2",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "81",
@@ -27402,14 +28142,19 @@
         1459.633
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      10.81,
+      15.5,
+      7.66,
+      15.5
+    ],
+    "areaSqM": 291.89,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "phase-2",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "82",
@@ -27528,14 +28273,19 @@
         1540.725
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      12.5,
+      15.5,
+      12.5,
+      15.5
+    ],
+    "areaSqM": 155.12,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "phase-2",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "83",
@@ -27670,14 +28420,19 @@
         1455.941
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      12.5,
+      15.5,
+      12.5,
+      15.5
+    ],
+    "areaSqM": 193.73,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "phase-2",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "84",
@@ -27808,14 +28563,19 @@
         1377.495
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      12.5,
+      15.5,
+      12.5,
+      15.5
+    ],
+    "areaSqM": 193.73,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "phase-2",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "85",
@@ -27950,14 +28710,19 @@
         1293.418
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      12.5,
+      15.5,
+      12.5,
+      15.5
+    ],
+    "areaSqM": 193.73,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "phase-2",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "86",
@@ -28088,14 +28853,19 @@
         1209.737
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      12.5,
+      15.5,
+      12.5,
+      15.5
+    ],
+    "areaSqM": 193.73,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "phase-2",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "87",
@@ -28226,14 +28996,19 @@
         1128.171
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      12.5,
+      15.5,
+      12.5,
+      15.5
+    ],
+    "areaSqM": 193.73,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "phase-2",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "88",
@@ -28384,14 +29159,19 @@
         1016.583
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      17,
+      15.5,
+      17,
+      15.5
+    ],
+    "areaSqM": 263.48,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "phase-2",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "89",
@@ -28546,14 +29326,19 @@
         1012.076
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      17,
+      15.5,
+      17,
+      15.5
+    ],
+    "areaSqM": 263.48,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "phase-2",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "90",
@@ -28684,14 +29469,19 @@
         1126.618
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      12.5,
+      15.5,
+      12.5,
+      15.5
+    ],
+    "areaSqM": 193.73,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "phase-2",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "91",
@@ -28822,14 +29612,19 @@
         1209.719
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      12.5,
+      15.5,
+      12.5,
+      15.5
+    ],
+    "areaSqM": 193.73,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "phase-2",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "92",
@@ -28960,14 +29755,19 @@
         1291.173
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      12.5,
+      15.5,
+      12.5,
+      15.5
+    ],
+    "areaSqM": 193.73,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "phase-2",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "93",
@@ -29098,14 +29898,19 @@
         1374.106
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      12.5,
+      15.5,
+      12.5,
+      15.5
+    ],
+    "areaSqM": 193.73,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "phase-2",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "94",
@@ -29236,14 +30041,19 @@
         1456.647
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      12.5,
+      15.5,
+      12.5,
+      15.5
+    ],
+    "areaSqM": 193.73,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "phase-2",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "95",
@@ -29374,14 +30184,19 @@
         1540.234
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      13.97,
+      15.5,
+      10.81,
+      15.5
+    ],
+    "areaSqM": 198.83,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "phase-2",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "96",
@@ -29530,15 +30345,15 @@
     ],
     "dataComplete": true,
     "edgeLengths": [
-      15.0,
-      15.0,
-      15.0,
-      14.99
+      18.3,
+      14.21,
+      15.28,
+      14.21
     ],
-    "areaSqM": 224.95,
+    "areaSqM": 240.48,
     "zone": "Central Residency",
     "typeOfDevelopment": "Residential Detached",
-    "status": "available",
+    "status": "phase-2",
     "price": null,
     "sellable": true
   },
@@ -29667,14 +30482,19 @@
         1454.016
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      12.5,
+      14.21,
+      12.5,
+      14.03
+    ],
+    "areaSqM": 176.5,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "phase-2",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "98",
@@ -29801,14 +30621,19 @@
         1371.044
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      12.5,
+      14.03,
+      12.5,
+      13.86
+    ],
+    "areaSqM": 174.36,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "phase-2",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "99",
@@ -29931,14 +30756,19 @@
         1289.7
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      12.5,
+      13.86,
+      12.5,
+      13.69
+    ],
+    "areaSqM": 172.15,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "phase-2",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "100",
@@ -30065,14 +30895,19 @@
         1205.379
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      12.5,
+      13.69,
+      12.5,
+      13.51
+    ],
+    "areaSqM": 170.01,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "phase-2",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "101",
@@ -30195,14 +31030,19 @@
         1122.701
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      12.5,
+      13.69,
+      12.5,
+      13.34
+    ],
+    "areaSqM": 167.83,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "phase-2",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "102",
@@ -30345,14 +31185,19 @@
         1011.733
       ]
     ],
-    "edgeLengths": null,
-    "areaSqM": null,
+    "edgeLengths": [
+      17,
+      13.34,
+      17,
+      13.1
+    ],
+    "areaSqM": 224.73,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential Detached",
-    "status": "under-development",
+    "status": "phase-2",
     "price": null,
     "sellable": true,
-    "dataComplete": false
+    "dataComplete": true
   },
   {
     "id": "road-entrance_road",
@@ -32635,7 +33480,7 @@
         1035.75
       ],
       [
-        1070.0,
+        1070,
         1035.75
       ],
       [
@@ -34979,7 +35824,7 @@
         656.856
       ],
       [
-        1388.0,
+        1388,
         668.754
       ],
       [
@@ -38458,7 +39303,7 @@
       ],
       [
         2629.44,
-        1461.0
+        1461
       ],
       [
         2629.117,
@@ -39188,7 +40033,7 @@
       ],
       [
         2876.678,
-        1069.0
+        1069
       ],
       [
         2876.552,
