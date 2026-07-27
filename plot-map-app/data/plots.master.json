@@ -3612,7 +3612,7 @@
     "areaSqM": 263.48,
     "zone": "Central Residency",
     "typeOfDevelopment": "Residential N.A Plot",
-    "status": "sold",
+    "status": "available",
     "price": null,
     "sellable": true,
     "facingRoad": "Lane 6"
@@ -20119,7 +20119,7 @@
     "areaSqM": 263.48,
     "zone": "Unassigned",
     "typeOfDevelopment": "Residential N.A Plot",
-    "status": "sold",
+    "status": "available",
     "price": null,
     "sellable": true,
     "dataComplete": true,
