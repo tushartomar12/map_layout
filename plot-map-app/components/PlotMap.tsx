@@ -78,10 +78,35 @@ const LANDMARK_COLORS: Record<string, { fillId: string; stroke: string }> = {
 
 const CANAL_IDS = new Set(["canal1", "canal2", "Canal_2", "Canal_3"]);
 
+/** Map + legend colors aligned with dark-glass UI (teal accent, zinc sold). */
+const PLOT_STATUS_COLORS = {
+  available: {
+    gradientTop: "#99f6e4",
+    gradientBottom: "#2dd4bf",
+    stroke: "#0f766e",
+    legendFill: "#2dd4bf",
+    legendStroke: "#0f766e",
+  },
+  sold: {
+    gradientTop: "#fdba74",
+    gradientBottom: "#fb923c",
+    stroke: "#f97316",
+    legendFill: "#fb923c",
+    legendStroke: "#f97316",
+  },
+  underDevelopment: {
+    gradientTop: "#dbeafe",
+    gradientBottom: "#93c5fd",
+    stroke: "#2563eb",
+    legendFill: "#93c5fd",
+    legendStroke: "#2563eb",
+  },
+} as const;
+
 const LEGEND_ITEMS = [
-  { label: "Unsold", fill: "#16a34a", stroke: "#15803d" },
-  { label: "Sold", fill: "#dc2626", stroke: "#b91c1c" },
-  { label: "Under Development", fill: "#93c5fd", stroke: "#2563eb" },
+  { label: "Unsold", fill: PLOT_STATUS_COLORS.available.legendFill, stroke: PLOT_STATUS_COLORS.available.legendStroke },
+  { label: "Sold", fill: PLOT_STATUS_COLORS.sold.legendFill, stroke: PLOT_STATUS_COLORS.sold.legendStroke },
+  { label: "Under Development", fill: PLOT_STATUS_COLORS.underDevelopment.legendFill, stroke: PLOT_STATUS_COLORS.underDevelopment.legendStroke },
   { label: "Amenity", fill: "#fef3c7", stroke: "#d97706" },
   { label: "Play Area", fill: "#86efac", stroke: "#16a34a" },
   { label: "Clubhouse", fill: "#fdba74", stroke: "#c2410c" },
@@ -164,12 +189,12 @@ function isInteractive(plot: Plot): boolean {
 
 function sellableStyle(plot: Plot): { fillId: string; stroke: string } {
   if (plot.status === "sold") {
-    return { fillId: "fill-sold", stroke: "#ef4444" };
+    return { fillId: "fill-sold", stroke: PLOT_STATUS_COLORS.sold.stroke };
   }
   if (plot.status === "under-development") {
-    return { fillId: "fill-under-development", stroke: "#2563eb" };
+    return { fillId: "fill-under-development", stroke: PLOT_STATUS_COLORS.underDevelopment.stroke };
   }
-  return { fillId: "fill-available", stroke: "#16a34a" };
+  return { fillId: "fill-available", stroke: PLOT_STATUS_COLORS.available.stroke };
 }
 
 function landmarkStyle(plot: Plot): { fillId: string; stroke: string } {
@@ -780,9 +805,9 @@ const ZoomControls = memo(function ZoomControls({
 
 const MapStatusBar = memo(function MapStatusBar() {
   const items = [
-    { label: "Sold", fill: "#dc2626", stroke: "#b91c1c" },
-    { label: "Unsold", fill: "#16a34a", stroke: "#15803d" },
-    { label: "Under Development", fill: "#93c5fd", stroke: "#2563eb" },
+    { label: "Sold", fill: PLOT_STATUS_COLORS.sold.legendFill, stroke: PLOT_STATUS_COLORS.sold.legendStroke },
+    { label: "Unsold", fill: PLOT_STATUS_COLORS.available.legendFill, stroke: PLOT_STATUS_COLORS.available.legendStroke },
+    { label: "Under Development", fill: PLOT_STATUS_COLORS.underDevelopment.legendFill, stroke: PLOT_STATUS_COLORS.underDevelopment.legendStroke },
   ] as const;
 
   return (
@@ -1201,16 +1226,16 @@ export default function PlotMap({
           </pattern>
         ) : null}
         <linearGradient id="fill-available" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stopColor="#22c55e" />
-          <stop offset="100%" stopColor="#16a34a" />
+          <stop offset="0%" stopColor={PLOT_STATUS_COLORS.available.gradientTop} />
+          <stop offset="100%" stopColor={PLOT_STATUS_COLORS.available.gradientBottom} />
         </linearGradient>
         <linearGradient id="fill-sold" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stopColor="#ef4444" />
-          <stop offset="100%" stopColor="#dc2626" />
+          <stop offset="0%" stopColor={PLOT_STATUS_COLORS.sold.gradientTop} />
+          <stop offset="100%" stopColor={PLOT_STATUS_COLORS.sold.gradientBottom} />
         </linearGradient>
         <linearGradient id="fill-under-development" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stopColor="#dbeafe" />
-          <stop offset="100%" stopColor="#bfdbfe" />
+          <stop offset="0%" stopColor={PLOT_STATUS_COLORS.underDevelopment.gradientTop} />
+          <stop offset="100%" stopColor={PLOT_STATUS_COLORS.underDevelopment.gradientBottom} />
         </linearGradient>
         <linearGradient id="fill-landmark-default" x1="0" y1="0" x2="0" y2="1">
           <stop offset="0%" stopColor="#ffffff" />
